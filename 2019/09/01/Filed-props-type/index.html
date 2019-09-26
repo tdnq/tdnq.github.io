@@ -5,19 +5,20 @@
   
 
   
-  <title>Category: npm | TD&#39;Blog</title>
+  <title>Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39; | TD&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个技术爱好者的个人博客网站">
+  <meta name="description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
 <meta name="keywords" content="css javascript 前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TD&#39;Blog">
-<meta property="og:url" content="https://tdnq.github.io/categories/npm/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;">
+<meta property="og:url" content="https://tdnq.github.io/2019/09/01/Filed-props-type/index.html">
 <meta property="og:site_name" content="TD&#39;Blog">
-<meta property="og:description" content="一个技术爱好者的个人博客网站">
+<meta property="og:description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-09-26T14:58:34.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TD&#39;Blog">
-<meta name="twitter:description" content="一个技术爱好者的个人博客网站">
+<meta name="twitter:title" content="Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;">
+<meta name="twitter:description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -64,40 +65,74 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/09/01/npm的基本使用/" class="archive-article-date">
-  <time datetime="2019-09-01T06:52:34.000Z" itemprop="datePublished">9月 1</time>
+        <section id="main"><article id="post-Filed-props-type" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/01/Filed-props-type/" class="article-date">
+  <time datetime="2019-09-01T06:37:58.000Z" itemprop="datePublished">2019-09-01</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Development-Error/">Development Error</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/01/npm的基本使用/">npm的基本使用</a>
+    <h1 class="article-title" itemprop="name">
+      Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>环境：React+umi+antd</strong></p>
+<p><strong>报错内容</strong></p>
+<p>报错</p>
+<p><strong>分析原因</strong></p>
+<p>antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。</p>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…state”否者就会报错）。</li>
+<li>统一数据类型。</li>
+</ol>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tdnq.github.io/2019/09/01/Filed-props-type/" data-id="ck10xekn10004o4tqm7jj57gx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/01/npm的基本使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          npm的基本使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/30/搭建wordpress个人博客网站/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">搭建wordpress个人博客网站</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
