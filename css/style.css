@@ -179,6 +179,12 @@ body {
 .mobile-nav-on #wrap {
   left: 280px;
 }
+#main {
+  padding: 0em 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 @media screen and (min-width: 768px) {
   #main {
     display: inline;
@@ -520,6 +526,40 @@ body {
 .article-inner {
   overflow: hidden;
 }
+.article-inner {
+  background: #fff;
+  background: -webkit-linear-gradient(240deg, transparent 2em, #fff 0);
+  background: -moz-linear-gradient(240deg, transparent 2em, #fff 0);
+  background: -ms-linear-gradient(240deg, transparent 2em, #fff 0);
+  background: linear-gradient(-150deg, transparent 2em, #fff 0);
+  position: relative;
+  border-width: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0,0,0,0.15);
+  box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0,0,0,0.15);
+}
+.article-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 4em;
+  width: 2.309em;
+  background: -webkit-linear-gradient(right top, transparent 50%, rgba(178,171,191,0.412) 0);
+  background: -moz-linear-gradient(right top, transparent 50%, rgba(178,171,191,0.412) 0);
+  background: -ms-linear-gradient(right top, transparent 50%, rgba(178,171,191,0.412) 0);
+  background: linear-gradient(to left bottom, transparent 50%, rgba(178,171,191,0.412) 0);
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-transform: translateY(-1.691em) rotate(-30deg);
+  -moz-transform: translateY(-1.691em) rotate(-30deg);
+  -ms-transform: translateY(-1.691em) rotate(-30deg);
+  transform: translateY(-1.691em) rotate(-30deg);
+  border-bottom-left-radius: 5px;
+}
 .article-meta:before,
 .article-meta:after {
   content: "";
@@ -546,6 +586,9 @@ body {
 }
 .article-header {
   padding: 20px 20px 0;
+}
+.article-header h1 {
+  margin-right: 4em;
 }
 .article-title {
   text-decoration: none;
@@ -1319,9 +1362,9 @@ pre .javascript .function {
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  background: #ddd;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
+  background: rgba(221,221,221,0.549);
+  -webkit-box-shadow: 0 0px 4px #a3a3c3;
+  box-shadow: 0 0px 4px #a3a3c3;
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 3px;
@@ -1349,6 +1392,9 @@ pre .javascript .function {
   line-height: 1.6em;
   word-wrap: break-word;
   font-size: 0.9em;
+}
+.widget a {
+  font-size: 14px;
 }
 .widget ul,
 .widget ol {
