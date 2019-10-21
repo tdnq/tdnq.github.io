@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="TD&#39;Blog">
 <meta property="og:description" content="os: win10官方文档win10搭配RN环境需要node·8+,python·2+,jdk8一，使用chocolatey安装需要软件优点：方便可靠，且自动搭建环境变量; 不足：国内速度较慢，可使用科学上网工具或者代理 安装chocolatey(这里使用powershell安装)–官方文档 管理员权限打开powershell,执行下面命令Get-ExecutionPolicy如果返回“Restr">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-10-21T16:21:38.959Z">
+<meta property="og:updated_time" content="2019-10-21T17:33:03.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactNative环境搭建">
 <meta name="twitter:description" content="os: win10官方文档win10搭配RN环境需要node·8+,python·2+,jdk8一，使用chocolatey安装需要软件优点：方便可靠，且自动搭建环境变量; 不足：国内速度较慢，可使用科学上网工具或者代理 安装chocolatey(这里使用powershell安装)–官方文档 管理员权限打开powershell,执行下面命令Get-ExecutionPolicy如果返回“Restr">
@@ -92,10 +92,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h2 id="os-win10"><a href="#os-win10" class="headerlink" title="os: win10"></a>os: win10</h2><h4 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a href="http://facebook.github.io/react-native/docs/getting-started" target="_blank" rel="noopener">官方文档</a></h4><h3 id="win10搭配RN环境需要node·8-python·2-jdk8"><a href="#win10搭配RN环境需要node·8-python·2-jdk8" class="headerlink" title="win10搭配RN环境需要node·8+,python·2+,jdk8"></a>win10搭配RN环境需要node·8+,python·2+,jdk8</h3><h3 id="一，使用chocolatey安装需要软件"><a href="#一，使用chocolatey安装需要软件" class="headerlink" title="一，使用chocolatey安装需要软件"></a>一，使用chocolatey安装需要软件</h3><p><strong>优点：方便可靠，且自动搭建环境变量; 不足：国内速度较慢，可使用科学上网工具或者代理</strong></p>
+<h4 id="安装chocolatey-这里使用powershell安装-–官方文档"><a href="#安装chocolatey-这里使用powershell安装-–官方文档" class="headerlink" title="安装chocolatey(这里使用powershell安装)–官方文档"></a>安装chocolatey(这里使用powershell安装)–<a href="https://chocolatey.org/docs/installation" target="_blank" rel="noopener">官方文档</a></h4><ol>
+<li><p>管理员权限打开powershell,执行下面命令<br><code>Get-ExecutionPolicy</code><br>如果返回“Restricted”,则执行下面命令<br><code>Set-ExecutionPolicy AllSigned</code></p>
+</li>
+<li><p>执行下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理员权限重启powershell执行<br><code>choco</code><br>可看到chocolatey相关信息即安装成功</p>
+</li>
+<li><p>执行<br><code>choco install -y nodejs.install python2 jdk8</code><br>就会自动安装需要软件</p>
+</li>
+<li><p>npm安装RN-cli<br><code>npm install -g react-native-cli</code></p>
+</li>
+</ol>
+<h4 id="安装Android-Studio-下载连接"><a href="#安装Android-Studio-下载连接" class="headerlink" title="安装Android Studio-下载连接"></a>安装Android Studio-<a href="https://developer.android.google.cn/studio/" target="_blank" rel="noopener">下载连接</a></h4><ol>
+<li>运行AndroidStudio安装程序,默认安装选项即可（安装位置推荐自定义）</li>
+<li>默默等待安装后运行，进行自定义安装即可</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/10/21/ReactNative环境搭建/" data-id="ck20mrkja0000k8tqxr2h9gpt" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/10/21/ReactNative环境搭建/" data-id="ck20p85vh0001pctqak6zrd88" class="article-share-link">Share</a>
       
       
     </footer>

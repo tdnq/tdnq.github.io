@@ -92,10 +92,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><strong>background-position的拓展语法方案</strong></p>
+<pre><code>#背景离右/下内边距3rem，background-origin默认为padding-box
+background-position: right 3rem bottom 3rem;</code></pre><p><strong>background-origin方案</strong></p>
+<pre><code>#背景离右/下内边距20px
+    padding: 20px;
+    background-position: right bottom;
+    background-origin: content-box;</code></pre><p><strong>calc方案</strong></p>
+<pre><code>background-position: calc(100% - 20px) calc(100% - 20px);</code></pre><p>源代码</p>
+<pre><code>#html
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;bpExpandGrammar&quot;&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&quot;bgOrigin&quot;&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&quot;bgCalc&quot;&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+#css
+div{
+    float: left;
+}
+.bpExpandGrammar{
+    width: 300px;
+    height: 300px;
+    margin: 1rem;
+    border: 10px solid;
+    padding: 20px;
+    background-image: url(&apos;./th.jpeg&apos;);
+    background-repeat: no-repeat;
+    background-position: right 3rem bottom 3rem;
+}
+.bgOrigin{
+    width: 300px;
+    height: 300px;
+    margin: 1rem;
+    border: 10px solid;
+    background-image: url(&apos;./th.jpeg&apos;);
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position: right bottom;
+    background-origin: content-box;
+}
+.bgCalc{
+    width: 300px;
+    height: 300px;
+    margin: 1rem;
+    border: 10px solid;
+    background-image: url(&apos;./th.jpeg&apos;);
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position: calc(100% - 20px) calc(100% - 20px);
+}</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/11/灵活的背景定位/" data-id="ck20mrkkv000rk8tq8dcqcr88" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/11/灵活的背景定位/" data-id="ck20p85wa000tpctqun5m308z" class="article-share-link">Share</a>
       
       
     </footer>

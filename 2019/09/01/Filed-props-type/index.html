@@ -92,10 +92,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><strong>环境：React+umi+antd</strong></p>
+<p><strong>报错内容</strong></p>
+<p>报错</p>
+<p><strong>分析原因</strong></p>
+<p>antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。</p>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…state”否者就会报错）。</li>
+<li>统一数据类型。</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/01/Filed-props-type/" data-id="ck20mrkjx0001k8tqjycfojxe" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/01/Filed-props-type/" data-id="ck20p85v60000pctqux6f17ow" class="article-share-link">Share</a>
       
       
     </footer>

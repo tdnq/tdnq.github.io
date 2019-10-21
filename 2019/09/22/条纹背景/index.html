@@ -92,10 +92,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><strong>主要知识点</strong></p>
+<p>linear-gradient; repeating-linear-gradient;</p>
+<p><strong>linear-gradient 方案</strong></p>
+<p>局限：角度必须为45deg,需要使用background-size进行贴片</p>
+<pre><code>background-image: linear-gradient(45deg,#fb3 25%,#58a 25%,#58a 50%,#fb3 50%,#fb3 75%,#58a 75%);
+background-size: 50px 50px;</code></pre><p><strong>repeating-linear-gradient 方案</strong></p>
+<p>优点：可任意调节角度，不需要贴片</p>
+<p>局限：制作垂直条纹时还是需要四条条纹</p>
+<pre><code>background-image: repeating-linear-gradient(45deg, #90a0b1 0px,#94a2af 15px,#6d6fb5 0, #5536b5 30px);</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/22/条纹背景/" data-id="ck20mrkkw000tk8tqn4maot8b" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/22/条纹背景/" data-id="ck20p85w7000opctqdkacoacn" class="article-share-link">Share</a>
       
       
     </footer>

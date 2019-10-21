@@ -92,10 +92,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h4 id="HTML默认遇到script标签时先执行脚本，阻塞文档的解析和渲染"><a href="#HTML默认遇到script标签时先执行脚本，阻塞文档的解析和渲染" class="headerlink" title="HTML默认遇到script标签时先执行脚本，阻塞文档的解析和渲染;"></a>HTML默认遇到script标签时先执行脚本，阻塞文档的解析和渲染;</h4><h3 id="异步和延迟脚本-：只支持外部脚本"><a href="#异步和延迟脚本-：只支持外部脚本" class="headerlink" title="异步和延迟脚本 ：只支持外部脚本"></a>异步和延迟脚本 ：只支持外部脚本</h3><h4 id="script的defer属性"><a href="#script的defer属性" class="headerlink" title="script的defer属性"></a>script的defer属性</h4><pre><code>* 可以使脚本立即下载，但延迟脚本的执行；
+* 直到文档载入解析完成，能保证脚本执行顺序，与将脚本放在文档末尾类似；</code></pre><h4 id="async属性"><a href="#async属性" class="headerlink" title="async属性"></a>async属性</h4><pre><code>* 可以使脚本尽快执行（异步下载，下载完成后立即执行），不阻塞文档解析；
+* 无法保证会按给出的标签顺序执行脚本（需要保证前后脚本间无依赖）；</code></pre><p><strong>注意：async权重更高</strong></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/10/07/js异步和延迟脚本/" data-id="ck20mrkk80007k8tqt8lscddr" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/10/07/js异步和延迟脚本/" data-id="ck20p85vp0005pctqn1d4eujy" class="article-share-link">Share</a>
       
       
     </footer>

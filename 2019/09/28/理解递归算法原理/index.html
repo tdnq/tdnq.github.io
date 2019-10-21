@@ -95,10 +95,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><strong>js code</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function recursive(n)&#123;</span><br><span class="line">    if(n===1)&#123;</span><br><span class="line">        console.log(&quot;堆栈完毕&quot;);</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        console.log(&quot;n:&quot;,n)//监听n变化</span><br><span class="line">        var res = n*arguments.callee(n-1);</span><br><span class="line">        console.log(&quot;res:&quot;,res);//监听回调变化</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>recursive(5)执行结果</strong><br><img src="/images/recursive/exeResult.png" alt="执行结果"></p>
+<p><strong>原理解析</strong><br><img src="/images/recursive/principle.png" alt="原理图"></p>
+<p><strong>在堆栈时，其后的语句暂时不执行，在找到结束点后回调时才执行</strong></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/28/理解递归算法原理/" data-id="ck20mrkky000wk8tqksojkmek" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/28/理解递归算法原理/" data-id="ck20p85wc000wpctq3uyyf4o8" class="article-share-link">Share</a>
       
       
     </footer>

@@ -92,10 +92,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h3 id="主要知识点："><a href="#主要知识点：" class="headerlink" title="主要知识点："></a>主要知识点：</h3><p><strong>hsla</strong></p>
+<ul>
+<li>h:色相; 0(或360)表示红色，120表示绿色，240表示蓝色 。</li>
+<li>s:饱和度; 0.0% - 100.0% 。</li>
+<li>l:亮度; 0.0% - 100.0% 。</li>
+<li>a:透明度;0-1;。</li>
+</ul>
+<p>css代码</p>
+<pre><code>    background-color: white;
+    border:10px solid rgba(200,200,200, 0.5);
+/*不使用background-clip的话边框是实色的话无影响，但如果用透明色就可能会与背景色混合，导致达不到期望的效果*/
+    background-clip: padding-box;</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/07/半透明边框/" data-id="ck20mrkkj000fk8tqzc11tfax" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/07/半透明边框/" data-id="ck20p85w1000hpctqc4lu9r2q" class="article-share-link">Share</a>
       
       
     </footer>

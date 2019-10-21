@@ -94,10 +94,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><img src="images/other/googleVpnError.png" alt="error"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li><p>打开远端服务器的ipv6服务,如果是vultr的服务商，在主机控制台勾选ipv6服务即可</p>
+</li>
+<li><p>在你的远端服务器/etc/hosts加入下面配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## Scholar 学术搜索</span><br><span class="line">2404:6800:4008:c06::be scholar.google.com</span><br><span class="line">2404:6800:4008:c06::be scholar.google.com.hk</span><br><span class="line">2404:6800:4008:c06::be scholar.google.com.tw</span><br><span class="line">2404:6800:4005:805::200e scholar.google.cn #www.google.cn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启vpn服务,如果是outline就重启outline,其它（ssr,shadowsocks）类似</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#outline重启</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/10/16/vpn无法访问谷歌学术/" data-id="ck20mrkke000ck8tq7eoyfm1k" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/10/16/vpn无法访问谷歌学术/" data-id="ck20p85vw000cpctqkykmfbz2" class="article-share-link">Share</a>
       
       
     </footer>

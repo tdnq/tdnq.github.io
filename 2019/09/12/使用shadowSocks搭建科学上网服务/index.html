@@ -112,10 +112,77 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><strong>一.</strong> 购买服务器</p>
+<p>个人尝试过多个服务商，这里推荐<strong>vultr</strong>,因为它<strong>按小时收费，支持支付宝付款</strong>，可以随时销毁，不像其他服务商按月购买</p>
+<p>购买链接：<a href="https://www.vultr.com/?ref=8022711" target="_blank" rel="noopener">vultr官方网站</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee9a777bd02?w=1024&h=306&f=png&s=120874" alt></p>
+<p><strong>官网首页</strong></p>
+<p>初次登录后，需要进行一次充值</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee981a6ba72?w=122&h=595&f=png&s=28631" alt></p>
+<p><strong>充值点</strong></p>
+<p>充值后点击右侧得加号图标购买需要的服务器</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee99a3d1821?w=1024&h=95&f=png&s=50194" alt></p>
+<p><strong>购买服务器</strong></p>
+<p>购买选项如下图；主机地点首选<strong>东京</strong>，次选<strong>新加坡</strong>，这两个地方速度会快一些，科学上网的话<strong>5美元</strong>的主机足够（根据具体人数选择，人不多的话5美元足够）</p>
+<p>购买步骤如下<br><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee9f5632edf?w=536&h=1024&f=png&s=284732" alt></p>
+<p>购买完成，等待其创建主机完成后，就可以测试主机是否可用（因为部分ip地址会被墙）；</p>
+<p>命令行执行</p>
+<pre><code>#点击创建的主机可以看到主机IP和root密码，都会用到
+ping 购买的主机IP</code></pre><p>可以ping通的话就可以用你的远程连接工具连接主机进行操作，比如<strong>Xshell</strong>(推荐)，或者在其官网登录。</p>
+<p>官网登录方式如下<br><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee98e6b4226?w=388&h=267&f=png&s=21541" alt></p>
+<p><strong>二、连接主机，这里使用xshell</strong></p>
+<p>如果在确定信息填写无误情况下始终连不上，那可能这个Ip不能用，可去官网添加新主机（注意要开到能用的主机再销毁不能用的主机，因为如果先销毁再开得到的会始终是同一个IP）</p>
+<p>1，主机信息</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58ee99b8c6669?w=676&h=284&f=png&s=35355" alt></p>
+<p><strong>新建连接</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eea64b09a2c?w=636&h=316&f=png&s=28042" alt></p>
+<p>主要填上ip，名称可以随便</p>
+<p>2，登录信息</p>
+<p>输入登录信息<br><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eea700e3bf2?w=643&h=290&f=png&s=31871" alt></p>
+<p>连接成功<br><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eea61df1555?w=295&h=157&f=png&s=9287" alt></p>
+<p><strong>三、安装shadowSocks</strong></p>
+<p>依次执行下面命令</p>
+<pre><code>wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+
+chmod +x shadowsocks-all.sh
+
+./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</code></pre><p>执行到下图，即是选择我们需要的服务，这里我选R版本的，即输入<strong>2</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eea7d4ed6e9?w=406&h=124&f=png&s=7220" alt></p>
+<p>输入密码：这个密码是客户端连接ssr的密码</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eea7b5b9336?w=229&h=55&f=png&s=2902" alt></p>
+<p>选择端口</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeafaf5d72d?w=352&h=71&f=png&s=4665" alt></p>
+<p>选择加密方式，默认的就好，enter即可</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeb2326ae9f?w=392&h=244&f=png&s=13686" alt></p>
+<p>选择协议，同样默认即可，enter</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeb1f9bb57a?w=388&h=230&f=png&s=12179" alt></p>
+<p>选择混淆，同样默认即可,enter</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeb206adb12?w=338&h=181&f=png&s=10833" alt></p>
+<p>下图继续回车，等待即可，可能较久</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeb43f23100?w=465&h=38&f=png&s=2170" alt></p>
+<p>ssr搭建成功，可以在客户端连接试试看</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eeb8725db49?w=465&h=152&f=png&s=10901" alt></p>
+<p>成功</p>
+<p>客户端连接,ssr下载链接</p>
+<p>Windows: <a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+<p>Android: <a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-android/releases</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eebb747e176?w=692&h=385&f=png&s=27509" alt></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/22/16d58eebd06ad3c1?w=970&h=471&f=png&s=49339" alt></p>
+<p>网速测试</p>
+<p><strong>四、BBR加速</strong></p>
+<p>依次执行下面三行命令</p>
+<pre><code>wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+
+chmod +x bbr.sh
+
+./bbr.sh</code></pre><p><strong>五、其它</strong></p>
+<p>shadowsocksR常用命令</p>
+<p>/etc/init.d/shadowsocks-r start<br>/etc/init.d/shadowsocks-r stop<br>/etc/init.d/shadowsocks-r restart<br>/etc/init.d/shadowsocks-r status</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/12/使用shadowSocks搭建科学上网服务/" data-id="ck20mrkkm000hk8tqt9woolna" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/12/使用shadowSocks搭建科学上网服务/" data-id="ck20p85vz000fpctqefz9hxo8" class="article-share-link">Share</a>
       
       
     </footer>
