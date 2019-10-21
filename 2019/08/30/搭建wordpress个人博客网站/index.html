@@ -73,7 +73,8 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-搭建wordpress个人博客网站" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-搭建wordpress个人博客网站" class="article article-type-post" itemscope
+  itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/30/搭建wordpress个人博客网站/" class="article-date">
   <time datetime="2019-08-30T06:10:59.000Z" itemprop="datePublished">2019-08-30</time>
@@ -87,180 +88,28 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       搭建wordpress个人博客网站
     </h1>
   
 
-      </header>
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>OS:Ubuntu 18.04×64</strong></p>
-<h4 id="一、搭建LNMP环境"><a href="#一、搭建LNMP环境" class="headerlink" title="一、搭建LNMP环境"></a><strong>一、搭建LNMP环境</strong></h4><ul>
-<li><strong>L</strong>:linux是一类Unix计算机操作系统的统称</li>
-<li><strong>N</strong>:nginx是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。</li>
-<li><strong>M</strong>:mysql是一个小型关系型数据库管理系统。</li>
-<li><strong>P</strong>:PHP是一种在服务器端执行的嵌入HTML文档的脚本语言。</li>
-</ul>
-<p><strong>1.安装nginx</strong></p>
-<pre><code>sudo apt install nginx</code></pre><p><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e024edf969d7?w=615&h=262&f=png&s=23780" alt></p>
-<p>打开<a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>看到下图代表nginx安装成功</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e034d8d81b86?w=924&h=342&f=png&s=19152" alt></p>
-<p><strong>2.安装mysql</strong></p>
-<pre><code>sudo apt install mysql-server</code></pre><p>遇到下图输入Y回车<br><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e03c70834bc1?w=532&h=213&f=png&s=14666" alt></p>
-<p>确认安装mysql<br><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e04b765ba745?w=563&h=254&f=png&s=24862" alt></p>
-<p>检验安装mysql安装结果</p>
-<pre><code>mysql -u root -p</code></pre><p><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e05f068eafca?w=597&h=235&f=png&s=15576" alt></p>
-<p>输入密码后进入mysql命令行即成功</p>
-<p><strong>3.安装php</strong></p>
-<pre><code>sudo apt install php
-sudo apt install php-fpm
-sudo apt install php-mysql</code></pre><p>依次执行上面三个命令，可能需要耐心等待一会儿。</p>
-<p>我们已经安装完了Nginx、PHP及MySQL，但是这套服务暂时还不能使用，我们需要将Nginx和PHP通过配置链接起来。具体操作如下，首先我们需要进入Nginx配置目录。</p>
-<pre><code>cd /etc/nginx/sites-enabled
-sudo nano default 
-#我使用的是nano,用此方法修改default.conf文件，ctrl+s保存，ctrl+x推出;没有的话可以执行
-#sudo apt install nano;安装nano,或者使用自带的vi编辑;</code></pre><p>然后将下面的代码贴入</p>
-<pre><code>server {
-    listen       80;
-    root         /usr/share/nginx/html;
-    location ~ .php$ {
-        fastcgi_pass  unix:/run/php/php7.2-fpm.sock;
-        # 注意此处的php7.2-fpm.sock为/run/php目录下运行的.sock文件，可能会因为下载的php-fpm版本不同需要自行检测一下
-        fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-    }
-}</code></pre><p>测试php环境</p>
-<pre><code>cd /usr/share/nginx/html
-sudo nano info.php</code></pre><p>在编辑器里写入</p>
-<pre><code>&lt;?php phpinfo(); ?&gt;</code></pre><p>打开<a href="http://localhost/info.php" target="_blank" rel="noopener">http://localhost/info.php</a>或者<a href="http://你的ip地址/info.php" target="_blank" rel="noopener">http://你的ip地址/info.php</a>,看到下图内容即Php环境搭配成功</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e078697df64d?w=1173&h=384&f=png&s=54538" alt></p>
-<h4 id="二、安装wordpress"><a href="#二、安装wordpress" class="headerlink" title="二、安装wordpress"></a>二、安装wordpress</h4><p>执行下面命令安装wordpress</p>
-<pre><code>apt install wordpress</code></pre><p><strong>为wodpress创建一个数据库和用户</strong></p>
-<p>进入数据库</p>
-<pre><code>mysql -u root -p #然后输入密码进入mysql命令行</code></pre><p>创建名为wordpress的数据库</p>
-<pre><code>CREATE DATABASE wordpress;</code></pre><p>创建一个名为wordpress,密码为wordpressPS且赋予操作数据库wordpress全部权限的mysql用户;</p>
-<pre><code>GRANT ALL ON wordpress.* TO &apos;wordpress&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;wordpressPS&apos;;</code></pre><p>退出数据库</p>
-<pre><code>EXIT;</code></pre><p>把上述的 DB 配置_同步到 WordPress 的配置_文件中；</p>
-<pre><code>cd /etc/wordpress
-sudo nano wp-config.php</code></pre><p>参照下面代码配置</p>
-<pre><code>&lt;?php
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the
- * installation. You don&apos;t have to use the web site, you can
- * copy this file to &quot;wp-config.php&quot; and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://codex.wordpress.org/Editing_wp-config.php
- *
- * @package WordPress
- */
-
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define(&apos;DB_NAME&apos;, &apos;wordpress&apos;);
-
-/** MySQL database username */
-define(&apos;DB_USER&apos;, &apos;wordpress&apos;);
-
-/** MySQL database password */
-define(&apos;DB_PASSWORD&apos;, &apos;wordpressPS&apos;);
-/** MySQL hostname */
-define(&apos;DB_HOST&apos;, &apos;localhost&apos;);
-
-/** Database Charset to use in creating database tables. */
-define(&apos;DB_CHARSET&apos;, &apos;utf8&apos;);
-
-/** The Database Collate type. Don&apos;t change this if in doubt. */
-define(&apos;DB_COLLATE&apos;, &apos;&apos;);
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = &apos;wp_&apos;;
-/**
- * See http://make.wordpress.org/core/2013/10/25/the-definitive-guide-to-disabling-auto-updates-in-wordpress-3-7
- */
-
-/* Disable all file change, as RPM base installation are read-only */
-define(&apos;DISALLOW_FILE_MODS&apos;, true);
-
-/* Disable automatic updater, in case you want to allow
-   above FILE_MODS for plugins, themes, ... */
-define(&apos;AUTOMATIC_UPDATER_DISABLED&apos;, true);
-
-define(&apos;WP_DEBUG&apos;, false);
-/* That&apos;s all, stop editing! Happy blogging. */
-
-/** Absolute path to the WordPress directory. */
-if ( !defined(&apos;ABSPATH&apos;) )
-    define(&apos;ABSPATH&apos;, &apos;/usr/share/wordpress&apos;);
-
-/** Sets up WordPress vars and included files. */
-require_once(ABSPATH . &apos;wp-settings.php&apos;);
-?&gt;</code></pre><p>修改wordpress内容文件的DB配置</p>
-<pre><code>cd /usr/share/wordpress
-sudo nano wp-config #其配置同样参照上面的配置文件</code></pre><p>修改nginx配置文件，参照下面配置</p>
-<pre><code>server {
-    listen       80;
-    root         /usr/share/wordpress;
-    location / {
-        index index.php index.html index.htm;
-        try_files $uri $uri/ /index.php index.php;
-}
-    location ~ .php$ {
-        fastcgi_pass  unix:/run/php/php7.2-fpm.sock;
-        fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-    }
-}</code></pre><p>重启nginx</p>
-<pre><code>sudo service nginx restart</code></pre><p>打开<a href="http:localhost/wp-admin/install.php" target="_blank" rel="noopener">http:localhost/wp-admin/install.php</a>开始安装wordpress;根据要求输入信息就可以了</p>
-<p><strong>安装成功</strong></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/9/26/16d6e0979c45761d?w=628&h=322&f=png&s=22728" alt></p>
-<h4 id="三、总结存在的问题"><a href="#三、总结存在的问题" class="headerlink" title="三、总结存在的问题"></a>三、总结存在的问题</h4><ul>
-<li>如果是自己上传wordpress版本到主机上需要修改对应文件夹(我的是在/usr/share/wordpress)权限到www-data用户下，否则会在安装主题或插件要求输入FTP服务器信息。</li>
-<li>/etc/wordpress下的配置文件应该有config-ip.php文件，与wp-config.php配置文件内容一样；不然也会报没有这个配置文件的错误。</li>
-<li>mysql数据库为root，密码为空。</li>
-</ul>
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/08/30/搭建wordpress个人博客网站/" data-id="ck1atzqdt000j74tqhmedh2r3" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/08/30/搭建wordpress个人博客网站/" data-id="ck20mrkkt000ok8tq3m9ohhn0" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-    
+  
 <nav id="article-nav">
   
     <a href="/2019/09/01/Filed-props-type/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -286,7 +135,7 @@ sudo nano wp-config #其配置同样参照上面的配置文件</code></pre><p>�
   <div class="widget-wrap">
     <h3><span class="widget-title">分类</span></h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">-cssSecrets</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/包管理/">包管理</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -296,7 +145,7 @@ sudo nano wp-config #其配置同样参照上面的配置文件</code></pre><p>�
   <div class="widget-wrap">
     <h3><span class="widget-title">归档</span></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -309,23 +158,23 @@ sudo nano wp-config #其配置同样参照上面的配置文件</code></pre><p>�
       <ul>
         
           <li>
-            <a href="/2019/10/03/折角效果/">折角效果</a>
+            <a href="/2019/10/21/ReactNative环境搭建/">ReactNative环境搭建</a>
           </li>
         
           <li>
-            <a href="/2019/09/28/理解递归算法原理/">理解递归算法原理</a>
+            <a href="/2019/10/18/npm发布包/">npm发布包</a>
           </li>
         
           <li>
-            <a href="/2019/09/26/css椭圆/">css椭圆</a>
+            <a href="/2019/10/16/vpn无法访问谷歌学术/">vpn无法访问谷歌学术</a>
           </li>
         
           <li>
-            <a href="/2019/09/22/条纹背景/">条纹背景</a>
+            <a href="/2019/10/13/脚本化css/">脚本化css</a>
           </li>
         
           <li>
-            <a href="/2019/09/17/边框内圆角/">边框内圆角</a>
+            <a href="/2019/10/07/js异步和延迟脚本/">js异步和延迟脚本</a>
           </li>
         
       </ul>

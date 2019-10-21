@@ -68,7 +68,8 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-理解递归算法原理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-理解递归算法原理" class="article article-type-post" itemscope
+  itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/28/理解递归算法原理/" class="article-date">
   <time datetime="2019-09-28T13:20:03.000Z" itemprop="datePublished">2019-09-28</time>
@@ -82,35 +83,28 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       理解递归算法原理
     </h1>
   
 
-      </header>
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>js code</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function recursive(n)&#123;</span><br><span class="line">    if(n===1)&#123;</span><br><span class="line">        console.log(&quot;堆栈完毕&quot;);</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        console.log(&quot;n:&quot;,n)//监听n变化</span><br><span class="line">        var res = n*arguments.callee(n-1);</span><br><span class="line">        console.log(&quot;res:&quot;,res);//监听回调变化</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>recursive(5)执行结果</strong><br><img src="/images/recursive/exeResult.png" alt="执行结果"></p>
-<p><strong>原理解析</strong><br><img src="/images/recursive/principle.png" alt="原理图"></p>
-<p><strong>在堆栈时，其后的语句暂时不执行，在找到结束点后回调时才执行</strong></p>
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/28/理解递归算法原理/" data-id="ck1atzqe0000o74tqlsg6bl6a" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/28/理解递归算法原理/" data-id="ck20mrkky000wk8tqksojkmek" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-    
+  
 <nav id="article-nav">
   
     <a href="/2019/10/03/折角效果/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -141,7 +135,7 @@
   <div class="widget-wrap">
     <h3><span class="widget-title">分类</span></h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">-cssSecrets</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/包管理/">包管理</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -151,7 +145,7 @@
   <div class="widget-wrap">
     <h3><span class="widget-title">归档</span></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -164,23 +158,23 @@
       <ul>
         
           <li>
-            <a href="/2019/10/03/折角效果/">折角效果</a>
+            <a href="/2019/10/21/ReactNative环境搭建/">ReactNative环境搭建</a>
           </li>
         
           <li>
-            <a href="/2019/09/28/理解递归算法原理/">理解递归算法原理</a>
+            <a href="/2019/10/18/npm发布包/">npm发布包</a>
           </li>
         
           <li>
-            <a href="/2019/09/26/css椭圆/">css椭圆</a>
+            <a href="/2019/10/16/vpn无法访问谷歌学术/">vpn无法访问谷歌学术</a>
           </li>
         
           <li>
-            <a href="/2019/09/22/条纹背景/">条纹背景</a>
+            <a href="/2019/10/13/脚本化css/">脚本化css</a>
           </li>
         
           <li>
-            <a href="/2019/09/17/边框内圆角/">边框内圆角</a>
+            <a href="/2019/10/07/js异步和延迟脚本/">js异步和延迟脚本</a>
           </li>
         
       </ul>

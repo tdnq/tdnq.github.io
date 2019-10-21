@@ -65,7 +65,8 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-git同步远端项目到本地" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git同步远端项目到本地" class="article article-type-post" itemscope
+  itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/03/git同步远端项目到本地/" class="article-date">
   <time datetime="2019-09-03T08:44:20.000Z" itemprop="datePublished">2019-09-03</time>
@@ -79,39 +80,28 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       git同步远端项目到本地
     </h1>
   
 
-      </header>
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>问题描述：我用create-react-app在电脑<strong>A</strong>上初始化了项目（引入了antd并按需引入样式），现在再同步到电脑<strong>B</strong>上，电脑<strong>B</strong>用create-react-app创建了基本目录结构</p>
-<p><strong>添加远程仓库</strong></p>
-<pre><code>git remote add origin 仓库链接</code></pre><p><strong>查看添加的远程仓库</strong></p>
-<pre><code>git remote -v</code></pre><p><strong>获取远端更新</strong></p>
-<pre><code>git fetch origin</code></pre><p><strong>建立分支追踪</strong></p>
-<pre><code>git branch --set-upstream-to=origin/&lt;branch&gt; master</code></pre><p><strong>pull分支</strong></p>
-<pre><code>git pull
-#如果报错：refusing to merge unrelated histories，则用下面的命令
-git pull --allow-unrelated-histories</code></pre><p><strong>如果报错：Please commit your changes or stash them before you merge.</strong>这是因为本地代码和远端代码起了冲突，我这里选择让远端覆盖本地，也可以根据需要选择提交</p>
-<p><strong>git覆盖本地命令</strong></p>
-<pre><code>git reset --hard origin/master</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/03/git同步远端项目到本地/" data-id="ck1atzqc7000474tqg2g1n0y2" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/09/03/git同步远端项目到本地/" data-id="ck20mrkk40004k8tqzitoxe2w" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-    
+  
 <nav id="article-nav">
   
     <a href="/2019/09/07/css百分比单位的参照对象/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -142,7 +132,7 @@ git pull --allow-unrelated-histories</code></pre><p><strong>如果报错：Pleas
   <div class="widget-wrap">
     <h3><span class="widget-title">分类</span></h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">-cssSecrets</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Development-Error/">Development Error</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cssSecrets/">cssSecrets</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wordpress/">wordpress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/包管理/">包管理</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -152,7 +142,7 @@ git pull --allow-unrelated-histories</code></pre><p><strong>如果报错：Pleas
   <div class="widget-wrap">
     <h3><span class="widget-title">归档</span></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -165,23 +155,23 @@ git pull --allow-unrelated-histories</code></pre><p><strong>如果报错：Pleas
       <ul>
         
           <li>
-            <a href="/2019/10/03/折角效果/">折角效果</a>
+            <a href="/2019/10/21/ReactNative环境搭建/">ReactNative环境搭建</a>
           </li>
         
           <li>
-            <a href="/2019/09/28/理解递归算法原理/">理解递归算法原理</a>
+            <a href="/2019/10/18/npm发布包/">npm发布包</a>
           </li>
         
           <li>
-            <a href="/2019/09/26/css椭圆/">css椭圆</a>
+            <a href="/2019/10/16/vpn无法访问谷歌学术/">vpn无法访问谷歌学术</a>
           </li>
         
           <li>
-            <a href="/2019/09/22/条纹背景/">条纹背景</a>
+            <a href="/2019/10/13/脚本化css/">脚本化css</a>
           </li>
         
           <li>
-            <a href="/2019/09/17/边框内圆角/">边框内圆角</a>
+            <a href="/2019/10/07/js异步和延迟脚本/">js异步和延迟脚本</a>
           </li>
         
       </ul>
