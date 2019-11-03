@@ -5,20 +5,20 @@
   
 
   
-  <title>Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39; | TD&#39;Blog</title>
+  <title>git本地账户密码配置 | TD&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
+  <meta name="description" content="问题：全局配置本地git账户密码避免每次输入账号密码步骤 git config –global user.name “gitName” git config –global user.email “gitEmail”输入以下命令即可看见git的配置git config --list --global设置记住密码（输入一次密码后，以后的操作就不用再操作）git config --global cre">
 <meta name="keywords" content="css,javascript,前端,tdnq,td">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;">
-<meta property="og:url" content="https://tdnq.github.io/2019/09/01/Filed-props-type/index.html">
+<meta property="og:title" content="git本地账户密码配置">
+<meta property="og:url" content="https://tdnq.github.io/2019/11/03/git本地账户密码配置/index.html">
 <meta property="og:site_name" content="TD&#39;Blog">
-<meta property="og:description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
+<meta property="og:description" content="问题：全局配置本地git账户密码避免每次输入账号密码步骤 git config –global user.name “gitName” git config –global user.email “gitEmail”输入以下命令即可看见git的配置git config --list --global设置记住密码（输入一次密码后，以后的操作就不用再操作）git config --global cre">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-27T09:25:41.168Z">
+<meta property="og:updated_time" content="2019-11-03T07:01:45.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;">
-<meta name="twitter:description" content="环境：React+umi+antd 报错内容 报错 分析原因 antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。 解决方法  同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…s">
+<meta name="twitter:title" content="git本地账户密码配置">
+<meta name="twitter:description" content="问题：全局配置本地git账户密码避免每次输入账号密码步骤 git config –global user.name “gitName” git config –global user.email “gitEmail”输入以下命令即可看见git的配置git config --list --global设置记住密码（输入一次密码后，以后的操作就不用再操作）git config --global cre">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -65,15 +65,15 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Filed-props-type" class="article article-type-post" itemscope
+        <section id="main"><article id="post-git本地账户密码配置" class="article article-type-post" itemscope
   itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/01/Filed-props-type/" class="article-date">
-  <time datetime="2019-09-01T06:37:58.000Z" itemprop="datePublished">2019-09-01</time>
+    <a href="/2019/11/03/git本地账户密码配置/" class="article-date">
+  <time datetime="2019-11-03T06:55:03.000Z" itemprop="datePublished">2019-11-03</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Development-Error/">Development Error</a>
+    <a class="article-category-link" href="/categories/git/">git</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
       
   
     <h1 class="article-title" itemprop="name">
-      Filed props type:Invalid props &#39;dataSource&#39; of type &#39;object&#39;
+      git本地账户密码配置
     </h1>
   
 
@@ -92,21 +92,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>环境：React+umi+antd</strong></p>
-<p><strong>报错内容</strong></p>
-<p>报错</p>
-<p><strong>分析原因</strong></p>
-<p>antd组件只能接受array数据；然而页面单个使用是没问题的，在后退跳转时就出错了。是因为在models里我只用了一个data,所以页面跳转时本页面的数据被当作跳转页面的数据（ps:本页面数据类型是object）使用了所以报错。</p>
-<p><strong>解决方法</strong></p>
-<ol>
-<li>同一个model的state使用两个对象分开储存数据。（reducer返回数据时需要返回”…state”否者就会报错）。</li>
-<li>统一数据类型。</li>
-</ol>
+        <h2 id="问题：全局配置本地git账户密码避免每次输入账号密码"><a href="#问题：全局配置本地git账户密码避免每次输入账号密码" class="headerlink" title="问题：全局配置本地git账户密码避免每次输入账号密码"></a>问题：全局配置本地git账户密码避免每次输入账号密码</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>git config –global user.name “gitName”</li>
+<li>git config –global user.email “gitEmail”<h3 id="输入以下命令即可看见git的配置"><a href="#输入以下命令即可看见git的配置" class="headerlink" title="输入以下命令即可看见git的配置"></a>输入以下命令即可看见git的配置</h3><code>git config --list --global</code><h3 id="设置记住密码（输入一次密码后，以后的操作就不用再操作）"><a href="#设置记住密码（输入一次密码后，以后的操作就不用再操作）" class="headerlink" title="设置记住密码（输入一次密码后，以后的操作就不用再操作）"></a>设置记住密码（输入一次密码后，以后的操作就不用再操作）</h3><code>git config --global credential.helper store</code></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/01/Filed-props-type/" data-id="ck2inqc500000lctq9c54l93j" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/11/03/git本地账户密码配置/" data-id="ck2inqc5d0004lctqvfjttr9y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,19 +109,19 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/01/npm的基本使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/03/git项目初始化操作/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          npm的基本使用
+          git项目初始化操作
         
       </div>
     </a>
   
   
-    <a href="/2019/08/30/搭建wordpress个人博客网站/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/10/27/ubuntu-albert安装/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">搭建wordpress个人博客网站</div>
+      <div class="article-nav-title">ubuntu albert安装</div>
     </a>
   
 </nav>
