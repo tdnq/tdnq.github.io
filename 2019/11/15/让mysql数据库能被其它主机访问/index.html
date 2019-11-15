@@ -5,19 +5,20 @@
   
 
   
-  <title>TD&#39;Blog</title>
+  <title>让mysql数据库能被其它主机访问 | TD&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个技术爱好者的个人博客网站">
+  <meta name="description" content="第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库） 确保数据库所在的主机能ping通； 确认在创建数据库用户时设置所有主机可访问（命令如下）1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;%&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option">
 <meta name="keywords" content="css,javascript,前端,tdnq,td">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TD&#39;Blog">
-<meta property="og:url" content="https://tdnq.github.io/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让mysql数据库能被其它主机访问">
+<meta property="og:url" content="https://tdnq.github.io/2019/11/15/让mysql数据库能被其它主机访问/index.html">
 <meta property="og:site_name" content="TD&#39;Blog">
-<meta property="og:description" content="一个技术爱好者的个人博客网站">
+<meta property="og:description" content="第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库） 确保数据库所在的主机能ping通； 确认在创建数据库用户时设置所有主机可访问（命令如下）1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;%&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-11-15T08:23:09.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TD&#39;Blog">
-<meta name="twitter:description" content="一个技术爱好者的个人博客网站">
+<meta name="twitter:title" content="让mysql数据库能被其它主机访问">
+<meta name="twitter:description" content="第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库） 确保数据库所在的主机能ping通； 确认在创建数据库用户时设置所有主机可访问（命令如下）1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;%&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -64,19 +65,13 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-js异步和延迟脚本" class="article article-type-post" itemscope
+        <section id="main"><article id="post-让mysql数据库能被其它主机访问" class="article article-type-post" itemscope
   itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/07/js异步和延迟脚本/" class="article-date">
-  <time datetime="2019-10-07T07:52:17.000Z" itemprop="datePublished">2019-10-07</time>
+    <a href="/2019/11/15/让mysql数据库能被其它主机访问/" class="article-date">
+  <time datetime="2019-11-15T06:25:19.000Z" itemprop="datePublished">2019-11-15</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -84,8 +79,8 @@
     <header class="article-header">
       
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/07/js异步和延迟脚本/">js异步和延迟脚本</a>
+    <h1 class="article-title" itemprop="name">
+      让mysql数据库能被其它主机访问
     </h1>
   
 
@@ -93,210 +88,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-      <p class="article-more-link">
-        <a href="/2019/10/07/js异步和延迟脚本/#more">Read More</a>
-      </p>
-      
+        <h3 id="第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库）"><a href="#第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库）" class="headerlink" title="第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库）"></a>第一类：主机访问虚拟机数据库（或者虚拟机访问主机数据库）</h3><ol>
+<li>确保数据库所在的主机能ping通；</li>
+<li>确认在创建数据库用户时设置所有主机可访问（命令如下）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on dbName.* to &quot;userName&quot;@&quot;%&quot; identified by &quot;dbPassword&quot; with grant option</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>“%”表示所有主机可访问</strong></p>
+<ol start="3">
+<li>需要注释/etc/mysql/mysql.conf.d/mysqld.cnf文件中的一行(在行首加“#”号即可),需要修改的行如下<br><code>bind-address    = 127.0.0.1</code>   <h3 id="第二类：另一主机（windows）访问主机数据库-ubuntu"><a href="#第二类：另一主机（windows）访问主机数据库-ubuntu" class="headerlink" title="第二类：另一主机（windows）访问主机数据库(ubuntu)"></a>第二类：另一主机（windows）访问主机数据库(ubuntu)</h3></li>
+<li>确保数据库所在的主机能ping通(一般时防火墙的问题，关闭防火墙或者开放某个端口即可)</li>
+</ol>
+<p><strong>其余同第一类</strong></p>
+<h4 id="其它问题"><a href="#其它问题" class="headerlink" title="其它问题"></a>其它问题</h4><p><strong>只能由mysql默认的3306端口访问</strong></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/10/07/js异步和延迟脚本/" data-id="ck2zvn5nj0007yotqwbn9ersm" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/11/15/让mysql数据库能被其它主机访问/" data-id="ck2zvn5uc0014yotqrqh2tgm2" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-</article>
-
-
   
-    <article id="post-折角效果" class="article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/03/折角效果/" class="article-date">
-  <time datetime="2019-10-03T14:57:03.000Z" itemprop="datePublished">2019-10-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cssSecrets/">cssSecrets</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/03/折角效果/">折角效果</a>
-    </h1>
   
+    <a href="/2019/11/10/ubuntu安装virtualbox/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ubuntu安装virtualbox</div>
+    </a>
+  
+</nav>
 
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      <p class="article-more-link">
-        <a href="/2019/10/03/折角效果/#more">Read More</a>
-      </p>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/10/03/折角效果/" data-id="ck2zvn5u0000qyotq9e2xfd6q" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-理解递归算法原理" class="article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/28/理解递归算法原理/" class="article-date">
-  <time datetime="2019-09-28T13:20:03.000Z" itemprop="datePublished">2019-09-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/28/理解递归算法原理/">理解递归算法原理</a>
-    </h1>
-  
-
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      <p class="article-more-link">
-        <a href="/2019/09/28/理解递归算法原理/#more">Read More</a>
-      </p>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/28/理解递归算法原理/" data-id="ck2zvn5ua0012yotqq1va7e2d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-css椭圆" class="article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/26/css椭圆/" class="article-date">
-  <time datetime="2019-09-26T14:11:03.000Z" itemprop="datePublished">2019-09-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cssSecrets/">cssSecrets</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/26/css椭圆/">css椭圆</a>
-    </h1>
-  
-
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      <p class="article-more-link">
-        <a href="/2019/09/26/css椭圆/#more">Read More</a>
-      </p>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/26/css椭圆/" data-id="ck2zvn5n80001yotqdqfqg5xj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-条纹背景" class="article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/22/条纹背景/" class="article-date">
-  <time datetime="2019-09-22T11:55:43.950Z" itemprop="datePublished">2019-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cssSecrets/">cssSecrets</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/22/条纹背景/">条纹背景</a>
-    </h1>
-  
-
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      <p class="article-more-link">
-        <a href="/2019/09/22/条纹背景/#more">Read More</a>
-      </p>
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/09/22/条纹背景/" data-id="ck2zvn5u7000zyotqqj0yyldu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-  </nav>
 
 </section>
         

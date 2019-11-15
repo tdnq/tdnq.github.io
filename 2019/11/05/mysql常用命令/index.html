@@ -7,18 +7,18 @@
   
   <title>mysql常用命令 | TD&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option;">
+  <meta name="description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option  为某一mysql数据库添加添加能被任意主机访问的数据库用户1grant a">
 <meta name="keywords" content="css,javascript,前端,tdnq,td">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql常用命令">
 <meta property="og:url" content="https://tdnq.github.io/2019/11/05/mysql常用命令/index.html">
 <meta property="og:site_name" content="TD&#39;Blog">
-<meta property="og:description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option;">
+<meta property="og:description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option  为某一mysql数据库添加添加能被任意主机访问的数据库用户1grant a">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-11-10T13:21:12.903Z">
+<meta property="og:updated_time" content="2019-11-15T06:27:33.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用命令">
-<meta name="twitter:description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option;">
+<meta name="twitter:description" content="mysql为某个数据库添加用户(赋予该数据库全部权限)1grant all privileges on dbName.* to &amp;quot;userName&amp;quot;@&amp;quot;localhost&amp;quot; identified by &amp;quot;dbPassword&amp;quot; with grant option  为某一mysql数据库添加添加能被任意主机访问的数据库用户1grant a">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -92,13 +92,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="mysql为某个数据库添加用户-赋予该数据库全部权限"><a href="#mysql为某个数据库添加用户-赋予该数据库全部权限" class="headerlink" title="mysql为某个数据库添加用户(赋予该数据库全部权限)"></a>mysql为某个数据库添加用户(赋予该数据库全部权限)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on dbName.* to &quot;userName&quot;@&quot;localhost&quot; identified by &quot;dbPassword&quot; with grant option;</span><br></pre></td></tr></table></figure>
+        <h4 id="mysql为某个数据库添加用户-赋予该数据库全部权限"><a href="#mysql为某个数据库添加用户-赋予该数据库全部权限" class="headerlink" title="mysql为某个数据库添加用户(赋予该数据库全部权限)"></a>mysql为某个数据库添加用户(赋予该数据库全部权限)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on dbName.* to &quot;userName&quot;@&quot;localhost&quot; identified by &quot;dbPassword&quot; with grant option</span><br></pre></td></tr></table></figure>
 
+<h4 id="为某一mysql数据库添加添加能被任意主机访问的数据库用户"><a href="#为某一mysql数据库添加添加能被任意主机访问的数据库用户" class="headerlink" title="为某一mysql数据库添加添加能被任意主机访问的数据库用户"></a>为某一mysql数据库添加添加能被任意主机访问的数据库用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on dbName.* to &quot;userName&quot;@&quot;%&quot; identified by &quot;dbPassword&quot; with grant option</span><br></pre></td></tr></table></figure>
+
+<h4 id="刷新权限（常用于添加用户之后）"><a href="#刷新权限（常用于添加用户之后）" class="headerlink" title="刷新权限（常用于添加用户之后）"></a>刷新权限（常用于添加用户之后）</h4><p><code>flush privileges</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/11/05/mysql常用命令/" data-id="ck2t27ebu000cxgtq7bd8m6iz" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/11/05/mysql常用命令/" data-id="ck2zvn5nk0008yotqewjm9225" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +148,7 @@
   <div class="widget-wrap">
     <h3><span class="widget-title">归档</span></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -156,6 +159,10 @@
     <h3><span class="widget-title">最近</span></h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/15/让mysql数据库能被其它主机访问/">让mysql数据库能被其它主机访问</a>
+          </li>
         
           <li>
             <a href="/2019/11/10/ubuntu安装virtualbox/">ubuntu安装virtualbox</a>
@@ -171,10 +178,6 @@
         
           <li>
             <a href="/2019/11/03/git本地账户密码配置/">git本地账户密码配置</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/ubuntu-albert安装/">ubuntu albert安装</a>
           </li>
         
       </ul>

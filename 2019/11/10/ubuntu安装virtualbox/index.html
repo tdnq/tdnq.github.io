@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="TD&#39;Blog">
 <meta property="og:description" content="命令行安装（也可在ubuntu软件商店安装）sudo apt install virtualbox 打开virtuallbox新建一个需要的系统(这里选win10)设置新建的虚拟机注意：储存里里选定对应镜像，系统里不勾选软驱 启动不报错即成功报错 The VirtualBox Linux kernel driver is either not loaded or not set up correc">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-11-10T13:49:44.946Z">
+<meta property="og:updated_time" content="2019-11-15T04:12:40.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu安装virtualbox">
 <meta name="twitter:description" content="命令行安装（也可在ubuntu软件商店安装）sudo apt install virtualbox 打开virtuallbox新建一个需要的系统(这里选win10)设置新建的虚拟机注意：储存里里选定对应镜像，系统里不勾选软驱 启动不报错即成功报错 The VirtualBox Linux kernel driver is either not loaded or not set up correc">
@@ -99,15 +99,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install --reinstall linux-headers-$(uname -r) virtualbox-dkms dkms</span><br><span class="line">sudo modprobe vboxdrv</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>could not insert ‘vboxdrv’:operation not permitted;(root执行下面命令)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 1&gt;/proc/sys/kernel/sysrq</span><br><span class="line">echo x&gt;/proc/sys/kernel/sysrq</span><br><span class="line">modprobe vboxdrv</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; /proc/sys/kernel/sysrq</span><br><span class="line">echo x &gt; /proc/sysrq-trigger</span><br><span class="line">modprobe vboxdrv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件拖动需要安装增强工具，安装后需要在虚拟机里手动点击安装才可启动拖动文件功能</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tdnq.github.io/2019/11/10/ubuntu安装virtualbox/" data-id="ck2t27ec2000kxgtqxm0pl78l" class="article-share-link">Share</a>
+      <a data-url="https://tdnq.github.io/2019/11/10/ubuntu安装virtualbox/" data-id="ck2zvn5tx000nyotq4z8lnuc8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,6 +116,15 @@
   
   
 <nav id="article-nav">
+  
+    <a href="/2019/11/15/让mysql数据库能被其它主机访问/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          让mysql数据库能被其它主机访问
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/05/mysql常用命令/" id="article-nav-older" class="article-nav-link-wrap">
@@ -145,7 +155,7 @@
   <div class="widget-wrap">
     <h3><span class="widget-title">归档</span></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -156,6 +166,10 @@
     <h3><span class="widget-title">最近</span></h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/15/让mysql数据库能被其它主机访问/">让mysql数据库能被其它主机访问</a>
+          </li>
         
           <li>
             <a href="/2019/11/10/ubuntu安装virtualbox/">ubuntu安装virtualbox</a>
@@ -171,10 +185,6 @@
         
           <li>
             <a href="/2019/11/03/git本地账户密码配置/">git本地账户密码配置</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/ubuntu-albert安装/">ubuntu albert安装</a>
           </li>
         
       </ul>
