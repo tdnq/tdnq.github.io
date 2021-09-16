@@ -2,7 +2,7 @@ let fsExtra = require("fs-extra");
 let path = require("path");
 
 
-let rootDir = path.resolve(__dirname,"../../blog");
+let rootDir = path.resolve(__dirname,"../../docs");
 
 fsExtra.emptyDirSync(rootDir);
 
