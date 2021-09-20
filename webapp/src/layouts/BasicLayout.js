@@ -1,18 +1,18 @@
 import React from "react";
-import { Layout, Menu } from 'antd';
-import styles from "./index.module.scss";
+import { Layout } from 'antd';
+import "./index.module.scss";
 const { Header, Content, Footer } = Layout;
 export default class BasicLayout extends React.Component {
     render() {
         return (
             <Layout className="layout">
                 <Header>
-                    <h1 style={{color:"white"}}>
+                    <h1 style={{ color: "white" }}>
                         TD's blog
-                    </h1> 
+                    </h1>
                 </Header>
                 <Content>
-                  {this.props.children}
+                    {this.props.children}
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Copyright&copy;{new Date().getFullYear()}.TD</Footer>
             </Layout>
@@ -20,6 +20,6 @@ export default class BasicLayout extends React.Component {
     }
 
 }
-BasicLayout.defaultProps={
-    navKey:3
+BasicLayout.defaultProps = {
+    navKey: 3
 }

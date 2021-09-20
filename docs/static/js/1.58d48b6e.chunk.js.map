@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/frontPage/index.js"],"names":["FrontPage","style","color"],"mappings":"uHAAA,mEACe,SAASA,IACpB,OAAO,yBAAKC,MAAO,CAACC,MAAM,QAAnB","file":"static/js/1.58d48b6e.chunk.js","sourcesContent":["import React from \"react\";\nexport default function FrontPage(){\n    return <div style={{color:\"red\"}}>\n        hello\n    </div>\n}"],"sourceRoot":""}
