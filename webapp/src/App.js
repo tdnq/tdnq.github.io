@@ -34,7 +34,6 @@ function App() {
             />
           })
         }
-        {/* <Route path="/" exact component={loadPage("./pages/frontPage/index.js")} /> */}
       </Switch>
     </Router >
   )

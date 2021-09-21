@@ -1,6 +1,6 @@
 
 import React from "react";
-import BasicLayout from "../layouts/BasicLayout";
+import BasicLayout from "../layouts/BasicLayout.jsx";
 import { Spin } from 'antd';
 import Loadable from 'react-loadable';
 
