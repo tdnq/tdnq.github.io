@@ -1,6 +1,11 @@
 import React from "react";
+import Webgl_frontPage from "../../webgl_page/frontPage";
+
 export default function FrontPage(){
-    return <div style={{color:"red"}}>
-        hello
+    const logoRef = React.createRef();
+    return <div id="cavasContainer" ref = {logoRef}>
+        {
+            // (new Webgl_frontPage).main()
+        }
     </div>
 }
