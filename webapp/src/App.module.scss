@@ -1,0 +1,21 @@
+:global{
+    .ant-layout-header{
+        box-shadow: 0 4px 5px #4354d0ba;
+    }
+
+    .ml-auto{
+        margin-left: auto!important;
+    }
+    .boxHidden{
+        visibility: hidden;
+    }
+    #root{
+        height: 100%;
+        &{
+            section{
+                height: 100%;
+            }
+            
+        }
+    }
+}
