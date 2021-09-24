@@ -7,7 +7,7 @@ import { getRouteComponent } from "./utils/router";
 //lazy load 
 import { Spin } from 'antd';
 import Loadable from 'react-loadable';
-
+import "./App.module.scss"
 const loadPage = (path) => Loadable({
   loader: () => import(`${path}`),
   loading: () => {
