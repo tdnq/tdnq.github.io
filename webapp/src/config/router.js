@@ -7,7 +7,7 @@ export let pagesRouterConfig = [
       layout: layoutsType[0]
    },
    {
-      path: "/shader/:shaderName",
+      path: "/shader/:shaderClass/:shaderName",
       component: "./pages/shader/index.jsx",
       layout: layoutsType[0]
    }
