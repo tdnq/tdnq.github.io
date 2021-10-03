@@ -2,21 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { pagesRouterConfig as pagesConfig } from "./config/router";
 import { getRouteComponent } from "./utils/router";
-
-
-//lazy load 
-import { Spin } from 'antd';
-import Loadable from 'react-loadable';
+import LoadPage from "./componets/loading/index.jsx";
 import "./App.module.scss"
-const loadPage = (path) => Loadable({
-  loader: () => import(`${path}`),
-  loading: () => {
-    return <div className="loading">
-      <Spin />
-    </div>
-  }
-});
-//router util
+
 
 function App() {
   return (
@@ -28,7 +16,7 @@ function App() {
               path={item.path}
               exact
               component={
-                getRouteComponent(item, loadPage)
+                getRouteComponent(item, LoadPage)
               }
               key={item.component}
             />

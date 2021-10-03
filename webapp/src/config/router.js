@@ -3,12 +3,12 @@ export let layoutsType = ["basicLayouts"];
 export let pagesRouterConfig = [
    {
       path: "/",
-      component: "./pages/frontPage/index.jsx",
+      component: "frontPage/index.jsx",
       layout: layoutsType[0]
    },
    {
       path: "/shader/:shaderClass/:shaderName",
-      component: "./pages/shader/index.jsx",
+      component: "shader/index.jsx",
       layout: layoutsType[0]
    }
 ];
