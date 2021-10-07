@@ -45,7 +45,6 @@ export default class WebglBase {
         return res;
     }
     initShader(shaderSource) {
-        debugger;
         let vertexShader = this.loadShader(this.gl.VERTEX_SHADER, shaderSource.vshader);
         let fragmentShader = this.loadShader(this.gl.FRAGMENT_SHADER, shaderSource.fshader);
         if (!vertexShader || !fragmentShader) {
@@ -88,6 +87,15 @@ export default class WebglBase {
         let fSize = data.BYTES_PER_ELEMENT;
         this.gl.vertexAttribPointer(shaderAttribution, size, type, false, fSize * stride, fSize*offset);
         this.gl.enableVertexAttribArray(shaderAttribution);
+        return true;
+    }
+    fillElementsIndex(data){
+        let buffer = this.gl.createBuffer();
+        if(!buffer){
+            return false;
+        }
+        this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER,buffer);
+        this.gl.bufferData(this.gl.ELEMENT_ARRAY_BUFFER,data,this.gl.STATIC_DRAW);
         return true;
     }
 }
