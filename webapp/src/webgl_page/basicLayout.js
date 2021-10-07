@@ -9,8 +9,6 @@ export default class BasicLayout extends Texture {
         //init envirment
         this.canvasContainer = ele.current;
         this.createCanvas(40, 60).appendCanvas();
-        // this.getWebglContext();
-        // this.handleLoadedTexture(this.gl , this.gl.createTexture(), this.createTextureCanvas("TD'S blog"));
         this.drawTexture("TD'blog");
     }
     drawLogo_initBuffer() {
