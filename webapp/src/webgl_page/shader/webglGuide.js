@@ -44,7 +44,7 @@ export default class WebglGuide extends Base {
 
         this.ele.addEventListener("mousedown", (event) => {
             let elePosition = event.target.getBoundingClientRect();
-            preX = event.clientX - elePosition.x, preY = event.clientY - elePosition.y;
+            preX = event.clientX - elePosition.x; preY = event.clientY - elePosition.y;
             isMove = true;
         });
         this.ele.addEventListener("mouseup", () => {
@@ -59,7 +59,7 @@ export default class WebglGuide extends Base {
                 angle.y += (x - preX) / event.target.width * 180;
                 angle.x += (y - preY) / event.target.height * 180;
                 angle.y = Math.max(Math.min(angle.y, 90.0), -90.0);
-                preX = x, preY = y;
+                preX = x; preY = y;
             }
         });
         function tick() {
