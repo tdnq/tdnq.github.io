@@ -1,2 +1,0 @@
-(this["webpackJsonptdnq.github.io"]=this["webpackJsonptdnq.github.io"]||[]).push([[5],{101:function(e,t,n){"use strict";n.r(t);var a=n(0),c=n.n(a),i=n(322),r=n(25);test("renders learn react link",(function(){var e=(0,Object(i.a)(c.a.createElement(r.default,null)).getByText)(/learn react/i);expect(e).toBeInTheDocument()}))}}]);
-//# sourceMappingURL=5.c5975c05.chunk.js.map

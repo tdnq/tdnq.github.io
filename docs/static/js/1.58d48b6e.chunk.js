@@ -1,2 +1,0 @@
-(this["webpackJsonptdnq.github.io"]=this["webpackJsonptdnq.github.io"]||[]).push([[1],{40:function(t,n,e){"use strict";e.r(n),e.d(n,"default",(function(){return r}));var i=e(0),o=e.n(i);function r(){return o.a.createElement("div",{style:{color:"red"}},"hello")}}}]);
-//# sourceMappingURL=1.58d48b6e.chunk.js.map
