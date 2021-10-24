@@ -84,6 +84,11 @@ export default class WebglGuide extends Base {
                 time: "2021/10/07"
             }
         };
-        return info[name]
+        switch(name){
+            case '*':
+                return info;
+            default: 
+                return info[name];
+        }
     }
 }
