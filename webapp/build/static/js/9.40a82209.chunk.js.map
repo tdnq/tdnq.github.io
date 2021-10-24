@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/shader/index.module.scss"],"names":["module","exports"],"mappings":"2GACAA,EAAOC,QAAU,CAAC,aAAe","file":"static/js/9.40a82209.chunk.js","sourcesContent":["// extracted by mini-css-extract-plugin\nmodule.exports = {\"canvasWraper\":\"shader_canvasWraper__3TvLM\"};"],"sourceRoot":""}
