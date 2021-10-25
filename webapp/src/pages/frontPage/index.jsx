@@ -1,20 +1,19 @@
 import React from "react";
 import Webgl_frontPage from "../../webgl_page/frontPage";
 import { NavLink } from "react-router-dom";
-import { Row, Col, Card ,Icon} from "antd";
+import { Row, Col, Card, Icon } from "antd";
 import Shaders from "../../webgl_page/shader/index.js";
 
 const { Meta } = Card;
 
 export default function FrontPage() {
-    const logoRef = React.createRef();
     const ShadersInfo = getShaderInfo();
     const refs = [];
-    React.useEffect(()=>{
-        refs.forEach((item)=>{
+    React.useEffect(() => {
+        refs.forEach((item) => {
             item.fn(item.ref);
         });
-    },[])
+    }, [])
     return <Row justify="center" type="flex" style={{ paddingTop: "32px", height: "100%" }}>
         <Col xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
             {
@@ -24,14 +23,14 @@ export default function FrontPage() {
                     return <Card
                         hoverable
                         style={{ width: 320 }}
-                        cover={<div ref={ref} style={{ height: "240px"}}></div>}
-                        key = {item.sourceClass+item.drawName}
+                        cover={<div ref={ref} style={{ height: "240px" }}></div>}
+                        key={item.sourceClass + item.drawName}
                     >
-                        <Meta 
-                        description={<NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
-                            go<Icon type="arrow-right" />
-                        </NavLink>} 
-                        title={item.info.name} />
+                        <Meta
+                            description={<NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
+                                go<Icon type="arrow-right" />
+                            </NavLink>}
+                            title={item.info.name} />
                     </Card>
                 })
             }
