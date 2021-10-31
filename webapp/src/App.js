@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
 import { pagesRouterConfig as pagesConfig } from "./config/router";
 import { getRouteComponent } from "./utils/router";
 import LoadPage from "./componets/loading/index.jsx";
@@ -22,6 +22,7 @@ function App() {
             />
           })
         }
+        <Redirect to="/404" />
       </Switch>
     </Router >
   )
