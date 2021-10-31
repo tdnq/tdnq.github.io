@@ -20,18 +20,20 @@ export default function FrontPage() {
                 ShadersInfo.map((item, index) => {
                     let ref = React.createRef();
                     refs.push({ fn: item.draw, ref });
-                    return <Card
-                        hoverable
-                        style={{ width: 320 }}
-                        cover={<div ref={ref} style={{ height: "240px" }}></div>}
-                        key={item.sourceClass + item.drawName}
-                    >
-                        <Meta
-                            description={<NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
-                                go<Icon type="arrow-right" />
-                            </NavLink>}
-                            title={item.info.name} />
-                    </Card>
+                    return <Col xl={{ span: 6 }} lg={{ span: 8 }} xs={{ span: 24 }}>
+                        <Card
+                            hoverable
+                            style={{margin:"4px 8px"}}
+                            cover={<div ref={ref} style={{ height: "240px" }}></div>}
+                            key={item.sourceClass + item.drawName}
+                        >
+                            <Meta
+                                description={<NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
+                                    go<Icon type="arrow-right" />
+                                </NavLink>}
+                                title={item.info.name} />
+                        </Card>
+                    </Col>
                 })
             }
         </Col>
@@ -41,7 +43,7 @@ export default function FrontPage() {
 function getShaderInfo() {
     let info = [];
     for (let key of Object.keys(Shaders)) {
-        let instanse = new Shaders[key];
+        let instanse = new Shaders[key]();
         let internalInfo = instanse.get_shader_info('*');
         for (let fnName of Object.keys(internalInfo)) {
             info.push({
