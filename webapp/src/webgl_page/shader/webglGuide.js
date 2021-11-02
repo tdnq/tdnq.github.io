@@ -1,9 +1,11 @@
 import Base from "../../utils/webglBase";
-import cube from "../material/cube"
+import cube from "../material/cube";
 import { rotateCubeUseMouseShaderSource } from "../source_shader/index";
 // import Matrix from "../../utils/matrix.js";
 import { Matrix4 } from "../../utils/matrix_lib.js";
 import {clearColor} from "../../config/shader";
+//the splited shader
+import fog from "./fog";
 export default class WebglGuide extends Base {
 
     constructor(...props) {
@@ -76,6 +78,9 @@ export default class WebglGuide extends Base {
         let bindTick = tick.bind(this);
         bindTick();
     }
+    fog(){
+        fog.call(this,...arguments);
+    }
     get_shader_info(name) {
         let info = {
             rotateCubeUseMouse: {
@@ -83,6 +88,12 @@ export default class WebglGuide extends Base {
                 describe: "",
                 source: "<<webgl编程指南>>",
                 time: "2021/10/07"
+            },
+            fog: {
+                name: "雾化效果",
+                describe: "↑↓:增大/减小 雾化的距离",
+                source: "<<webgl编程指南>>",
+                time: "2021/10/31"
             }
         };
         switch(name){

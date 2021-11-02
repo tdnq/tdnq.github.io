@@ -6,7 +6,7 @@
 //  |/      |/
 //  v0------v1
 
-let sideLength = 0.8;
+let sideLength = 1.0;
 let cube = {
     vertex: [
         -sideLength, -sideLength, sideLength,
