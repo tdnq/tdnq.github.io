@@ -54,6 +54,8 @@ function keydown(fogDist,ev){
                                 fogDist[1]-=1;
                         }
                         break;
+                default:
+                        break;
         }
         this.fillUniformData(fogDist,"u_fogDist",2);
         this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);

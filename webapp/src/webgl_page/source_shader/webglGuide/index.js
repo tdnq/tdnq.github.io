@@ -10,7 +10,7 @@ export const fogShaderSource = {
             void main(){
                 gl_Position = u_mvpMatrix * a_position;
                 f_color = a_color;
-                v_dist = distance(u_modelMatrix * a_position, u_eye);
+                v_dist = gl_Position.w;
             }
         `,
     fshader: `
