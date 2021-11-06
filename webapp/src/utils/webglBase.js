@@ -27,20 +27,10 @@ export default class WebglBase {
             return null;
         }
     }
-    getRandomArray(len, num) {
+    getRandomArray(len) {
         let res = [];
-        if (!num) {
-            for (let i = 0; i < len; i++) {
-                res.push(Math.random());
-            }
-        } else {
-            for (let i = 0; i < num; i++) {
-                let temp = new Array(len);
-                temp.forEach((item, index) => {
-                    temp[index] = Math.random();
-                });
-                res.push(temp);
-            }
+        for (let i = 0; i < len; i++) {
+            res.push(Math.random());
         }
         return res;
     }
