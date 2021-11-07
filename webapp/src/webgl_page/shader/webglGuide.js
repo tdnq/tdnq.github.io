@@ -100,7 +100,7 @@ export default class WebglGuide extends Base {
                 time: "2021/10/31"
             },
               roundedPoint: {
-                name: "原点",
+                name: "圆点",
                 describe: "使用GLSL ES画出原点",
                 source: "<<webgl编程指南>>",
                 time: "2021/11/07"
