@@ -26,3 +26,26 @@ export const fogShaderSource = {
             }
         `
 }
+export const roundedPointShaderSource = {
+    vshader: `
+            attribute vec4 a_position;
+            attribute vec4 a_color;
+            varying vec4 f_color;
+            void main(){
+                gl_Position = a_position;
+                f_color = a_color;
+                gl_PointSize = 100.0;
+            }
+        `,
+    fshader: `
+            precision mediump float;
+            varying vec4 f_color;
+            void main(){
+                gl_FragColor = f_color;
+                float d = distance(gl_PointCoord, vec2(0.5, 0.5));
+                if(d < 0.5) {
+                        gl_FragColor = vec4(f_color); 
+                     } else { discard; }
+                }
+        `
+}

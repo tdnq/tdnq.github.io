@@ -3,9 +3,10 @@ import cube from "../material/cube";
 import { rotateCubeUseMouseShaderSource } from "../source_shader/index";
 // import Matrix from "../../utils/matrix.js";
 import { Matrix4 } from "../../utils/matrix_lib.js";
-import {clearColor} from "../../config/shader";
+import { clearColor } from "../../config/shader";
 //the splited shader
 import fog from "./fog";
+import roundedPoint from "./roundedPoint.js";
 export default class WebglGuide extends Base {
 
     constructor(...props) {
@@ -78,8 +79,11 @@ export default class WebglGuide extends Base {
         let bindTick = tick.bind(this);
         bindTick();
     }
-    fog(){
-        fog.call(this,...arguments);
+    fog() {
+        fog.call(this, ...arguments);
+    }
+    roundedPoint() {
+        roundedPoint.call(this, ...arguments);
     }
     get_shader_info(name) {
         let info = {
@@ -94,12 +98,18 @@ export default class WebglGuide extends Base {
                 describe: "↑↓:增大/减小 雾化的距离",
                 source: "<<webgl编程指南>>",
                 time: "2021/10/31"
-            }
+            },
+              roundedPoint: {
+                name: "原点",
+                describe: "使用GLSL ES画出原点",
+                source: "<<webgl编程指南>>",
+                time: "2021/11/07"
+            },          
         };
-        switch(name){
+        switch (name) {
             case '*':
                 return info;
-            default: 
+            default:
                 return info[name];
         }
     }
