@@ -16,7 +16,7 @@ export default function roundedPoint(ele) {
     this.gl.drawArrays(this.gl.POINTS, 0, vertexNum);
 }
 function model() {
-    const dotPosition = new Float32Array([0, 0, 0, 0.0, 0.5, 0.0, 0.5, 0.0, 0.0]);
+    const dotPosition = new Float32Array([0, 0, 0, 0.0, 0.5, 0.0, 0.5, 0.0, 0.0, -0.5, 0, 0, 0, -0.5, 0]);
     const color = new Float32Array(this.getRandomArray(dotPosition.length / 3 * 4));
     this.fillShaderAttribution(dotPosition, "a_position", 3)
     this.fillShaderAttribution(color, "a_color", 4);
