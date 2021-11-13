@@ -3,7 +3,7 @@ import cube from "../material/cube";
 import { rotateCubeUseMouseShaderSource } from "../source_shader/index";
 // import Matrix from "../../utils/matrix.js";
 import { Matrix4 } from "../../utils/matrix_lib.js";
-import { clearColor } from "../../config/shader";
+import { blendClearColor } from "../../config/shader";
 //the splited shader
 import fog from "./fog";
 import roundedPoint from "./roundedPoint.js";
@@ -17,8 +17,10 @@ export default class WebglGuide extends Base {
     rotateCubeUseMouse(ele) {
         this.canvasContainer = ele.current;
         this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight).appendCanvas().getWebglContext();
-        this.gl.clearColor(...clearColor);
-        this.gl.enable(this.gl.DEPTH_TEST);
+        this.gl.clearColor(...blendClearColor);
+        // this.gl.enable(this.gl.DEPTH_TEST);
+        this.gl.enable(this.gl.BLEND);
+        this.gl.blendFunc(this.gl.SRC_ALPHA, this.gl.ONE_MINUS_CONSTANT_ALPHA);
         //initShader
         this.initShader(rotateCubeUseMouseShaderSource);
         //modeling
