@@ -5,7 +5,7 @@ import Hud from "../../componets/hud/index.jsx"
 import style from "./index.module.scss";
 
 function Shader(props) {
-    let shaderRef = React.createRef();
+    let shaderRef = React.useRef();
     let [info, setInfo] = React.useState(null);
     React.useEffect(() => {
         let shaderName = props.match.params.shaderName;

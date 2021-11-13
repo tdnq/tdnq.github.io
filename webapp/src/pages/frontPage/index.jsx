@@ -8,12 +8,12 @@ const { Meta } = Card;
 
 export default function FrontPage() {
     const ShadersInfo = getShaderInfo();
-    const refs = [];
+    const [refs, setRefs] = React.useState([]);
     React.useEffect(() => {
         refs.forEach((item) => {
             item.fn(item.ref);
         });
-    }, [])
+    }, [refs])
     return <Row justify="center" type="flex" style={{ paddingTop: "32px", height: "100%" }}>
         <Col xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
             {
