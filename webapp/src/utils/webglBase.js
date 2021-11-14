@@ -55,12 +55,36 @@ export default class WebglBase {
         this.gl._program = program;
         return true;
     }
+    createShaderProgram(shaderSource){
+        let vertexShader = this.loadShader(this.gl.VERTEX_SHADER, shaderSource.vshader);
+        let fragmentShader = this.loadShader(this.gl.FRAGMENT_SHADER, shaderSource.fshader);
+        if (!vertexShader || !fragmentShader) {
+            return false;
+        }
+        let program = this.gl.createProgram();
+
+        this.gl.attachShader(program, vertexShader);
+        this.gl.attachShader(program, fragmentShader);
+        this.gl.linkProgram(program);
+
+        let linkStatus = this.gl.getProgramParameter(program, this.gl.LINK_STATUS);
+        if (!linkStatus) {
+            let error = this.gl.getProgramInfoLog(program);
+            console.error('Failed to link program: ' + error);
+            this.gl.deleteProgram(program);
+            this.gl.deleteShader(fragmentShader);
+            this.gl.deleteShader(vertexShader);
+            return false;
+        }
+        return program;
+    }
     loadShader(shaderType, shader) {
         let shaderObj = this.gl.createShader(shaderType);
         this.gl.shaderSource(shaderObj, shader);
         this.gl.compileShader(shaderObj);
         let compileStatus = this.gl.getShaderParameter(shaderObj, this.gl.COMPILE_STATUS);
         if (!compileStatus) {
+            this.gl.deleteShader(shaderObj);
             return null;
         }
         return shaderObj;

@@ -7,6 +7,7 @@ import { blendClearColor } from "../../config/shader";
 //the splited shader
 import fog from "./fog";
 import roundedPoint from "./roundedPoint.js";
+import shadow from "./shadow.js";
 export default class WebglGuide extends Base {
 
     constructor(...props) {
@@ -84,6 +85,9 @@ export default class WebglGuide extends Base {
     fog() {
         fog.call(this, ...arguments);
     }
+    shadow() {
+        shadow.call(this, ...arguments);
+    }
     roundedPoint() {
         roundedPoint.call(this, ...arguments);
     }
@@ -101,12 +105,18 @@ export default class WebglGuide extends Base {
                 source: "<<webgl编程指南>>",
                 time: "2021/10/31"
             },
-              roundedPoint: {
+            roundedPoint: {
                 name: "圆点",
                 describe: "使用GLSL ES画出圆点",
                 source: "<<webgl编程指南>>",
                 time: "2021/11/07"
-            },          
+            },
+            shadow: {
+                name: "阴影",
+                describe: "webgl 阴影效果",
+                source: "<<webgl编程指南>>",
+                time: "2021/11/13"
+            },
         };
         switch (name) {
             case '*':

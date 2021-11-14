@@ -14,7 +14,7 @@ function Shader(props) {
         targeClass.then((res) => {
             let instanse = new res.default();
             instanse[shaderName](shaderRef);
-            setInfo(instanse[`get_shader_info`](shaderName))
+            setInfo(instanse[`get_shader_info`](shaderName));
         });
     }, [props.match.params.shaderName, props.match.params.shaderClass]);
 

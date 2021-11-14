@@ -49,3 +49,46 @@ export const roundedPointShaderSource = {
                 }
         `
 }
+export const shadowShaderSource = {
+    vshader: `
+            attribute vec4 a_position;
+            uniform mat4 u_mvpMatrix;
+            void main(){
+                gl_Position = u_mvpMatrix * a_position;
+            }
+        `,
+    fshader: `
+            precision mediump float;
+            void main(){
+                gl_FragColor = vec4(gl_FragCoord.z, 0, 0, 0);
+            }
+        `
+}
+export const shadowNormalShaderSource = {
+    vshader:`
+        attribute vec4 a_position;
+        attribute vec4 a_color;
+        uniform mat4 u_mvpMatrix;
+        uniform mat4 u_mvpMatrixFromLight;
+        varying vec4 v_positionFromLight;
+        varying vec4 v_color;
+        void main(){
+            gl_Position = u_mvpMatrix * a_position;
+            v_positionFromLight = u_mvpMatrixFromLight * a_position;
+            v_color = a_color;
+        }
+    `,
+    fshader:`
+        precision mediump float;
+        uniform sampler2D u_shadowMap;
+        varying vec4 v_positionFromLight;
+        varying vec4 v_color;
+        void main(){
+            vec3 shadowCoord = (v_positionFromLight.xyz / v_positionFromLight.w)/2.0 + 0.5;
+            vec4 rgbaDepth = texture2D(u_shadowMap, shadowCoord.xy);
+            float depth = rgbaDepth.r;
+            float visibility = (shadowCoord.z > depth + 0.005) ? 0.7: 1.0;
+            gl_FragColor = vec4(v_color.rgb * visibility, v_color.a);
+        }
+    `
+}
