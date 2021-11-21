@@ -1,9 +1,9 @@
-import Base from "../../utils/webglBase";
-import cube from "../material/cube";
-import { rotateCubeUseMouseShaderSource } from "../source_shader/index";
+import Base from "../../../utils/webglBase";
+import cube from "../../material/cube";
+import { rotateCubeUseMouseShaderSource } from "../../source_shader/index";
 // import Matrix from "../../utils/matrix.js";
-import { Matrix4 } from "../../utils/matrix_lib.js";
-import { blendClearColor } from "../../config/shader";
+import { Matrix4 } from "../../../utils/matrix_lib.js";
+import { blendClearColor } from "../../../config/shader";
 //the splited shader
 import fog from "./fog";
 import roundedPoint from "./roundedPoint.js";

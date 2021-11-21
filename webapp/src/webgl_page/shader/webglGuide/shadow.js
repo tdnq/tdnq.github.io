@@ -1,6 +1,6 @@
-import { clearColor, blendClearColor } from "../../config/shader.js";
-import { shadowShaderSource, shadowNormalShaderSource } from "../source_shader/webglGuide/index.js";
-import { Matrix4 } from "../../utils/matrix_lib.js";
+import { clearColor, blendClearColor } from "../../../config/shader.js";
+import { shadowShaderSource, shadowNormalShaderSource } from "../../source_shader/webglGuide/index.js";
+import { Matrix4 } from "../../../utils/matrix_lib.js";
 
 export default function shadow(ele) {
     this.canvasContainer = ele.current;

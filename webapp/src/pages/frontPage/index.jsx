@@ -3,6 +3,7 @@ import Webgl_frontPage from "../../webgl_page/frontPage";
 import { NavLink } from "react-router-dom";
 import { Row, Col, Card, Icon } from "antd";
 import Shaders from "../../webgl_page/shader/index.js";
+import styles from "./index.module.scss";
 
 const { Meta } = Card;
 
@@ -15,7 +16,7 @@ export default function FrontPage() {
         });
     }, [refs])
     return <Row justify="center" type="flex" style={{ paddingTop: "32px", height: "100%" }}>
-        <Col xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
+        <Col className={styles.frontPage} xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
             {
                 ShadersInfo.map((item, index) => {
                     let ref = React.createRef();

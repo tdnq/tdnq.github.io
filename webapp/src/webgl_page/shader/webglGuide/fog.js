@@ -1,7 +1,7 @@
-import { clearColor } from "../../config/shader.js";
-import cube from "../material/cube.js";
-import { fogShaderSource, } from "../source_shader/webglGuide/index.js";
-import { Matrix4 } from "../../utils/matrix_lib.js";
+import { clearColor } from "../../../config/shader.js";
+import cube from "../../material/cube.js";
+import { fogShaderSource, } from "../../source_shader/webglGuide/index.js";
+import { Matrix4 } from "../../../utils/matrix_lib.js";
 
 export default function fog(ele) {
         //init environment
