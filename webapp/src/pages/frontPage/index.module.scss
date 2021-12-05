@@ -1,9 +1,13 @@
+.frontPage {
+  color: red;
 
-.frontPage{
-    color: red;
-    :global{
-        .ant-card-body{
-            border-top: 1px solid #e6e6e6;
-        }
+  :global {
+    .ant-card-body {
+      border-top: 1px solid #e6e6e6;
     }
+
+    p {
+      color: red;
+    }
+  }
 }

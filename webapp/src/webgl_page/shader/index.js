@@ -1,4 +1,6 @@
-import webglGuide from "./webglGuide";
+import webglGuide from "./webglGuide/index";
+import threejs from './threejs/index';
 export default{
-    webglGuide
+    webglGuide,
+    threejs
 }

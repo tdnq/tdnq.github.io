@@ -28,7 +28,7 @@ export default function FrontPage() {
                         xs={{ span: 24 }}>
                         <Card
                             hoverable
-                            style={{margin:"4px 8px"}}
+                            style={{ margin: "4px 8px" }}
                             cover={<div ref={ref} style={{ height: "240px" }}></div>}
                         >
                             <Meta
@@ -50,6 +50,10 @@ function getShaderInfo() {
         let instanse = new Shaders[key]();
         let internalInfo = instanse.get_shader_info('*');
         for (let fnName of Object.keys(internalInfo)) {
+            // control the show of shader
+            if (internalInfo[fnName]?.isHidden) {
+                continue;
+            }
             info.push({
                 drawName: fnName,
                 sourceClass: key,
