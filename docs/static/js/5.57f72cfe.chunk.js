@@ -1,2 +1,0 @@
-(this["webpackJsonptdnq.github.io"]=this["webpackJsonptdnq.github.io"]||[]).push([[5],{42:function(t,e,i){"use strict";i.r(e);i(185);var n=i(203),a=(i(187),i(202)),r=i(0),s=i.n(r),o=i(1);e.default=Object(o.g)((function(t){return s.a.createElement(n.a,{status:"404",title:"404",subTitle:"Sorry, the page you visited does not exist.",extra:s.a.createElement(a.a,{type:"primary",onClick:function(){return t.history.push("/")}},"Back Home")})}))}}]);
-//# sourceMappingURL=5.57f72cfe.chunk.js.map

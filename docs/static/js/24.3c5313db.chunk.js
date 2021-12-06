@@ -1,0 +1,1 @@
+(this["webpackJsonptdnq.github.io"]=this["webpackJsonptdnq.github.io"]||[]).push([[24],{172:function(t,n,o){t.exports={frontPage:"frontPage_frontPage__3PcKm"}}}]);

@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.module.scss"],"names":[],"mappings":"AAAA,uBACI,iBAAkB,CAClB,UAAW,CACX,SAAU,CAHd,uCAKQ,aAAc,CACd,eAAgB,CAChB,qCAA2B,CAC3B,iBAAkB,CAElB,gBAAkB,CAV1B,2CAYY,WAAY,CAZxB,4BACI,WAAY","file":"4.12d50346.chunk.css","sourcesContent":[".canvasWraper{\n    height: 100%;\n} "]}

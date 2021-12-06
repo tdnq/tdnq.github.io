@@ -1,2 +1,0 @@
-(this["webpackJsonptdnq.github.io"]=this["webpackJsonptdnq.github.io"]||[]).push([[12],{167:function(a,s,n){a.exports={canvasWraper:"shader_canvasWraper__3TvLM"}}}]);
-//# sourceMappingURL=12.e5244c6c.chunk.js.map
