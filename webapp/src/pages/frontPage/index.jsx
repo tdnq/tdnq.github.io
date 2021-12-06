@@ -2,7 +2,7 @@ import React from "react";
 import Webgl_frontPage from "../../webgl_page/frontPage";
 import { NavLink } from "react-router-dom";
 import { Row, Col, Card, Icon } from "antd";
-import Shaders from "../../webgl_page/shader/index.js";
+import * as Shaders from "../../webgl_page/shader/index.js";
 import styles from "./index.module.scss";
 
 const { Meta } = Card;
