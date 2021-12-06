@@ -54,6 +54,9 @@ function getShaderInfo() {
             if (internalInfo[fnName]?.isHidden) {
                 continue;
             }
+            if (internalInfo[fnName]?.['showPriority'] === undefined) {
+                internalInfo[fnName]['showPriority'] = 0;
+            }
             info.push({
                 drawName: fnName,
                 sourceClass: key,
@@ -62,5 +65,8 @@ function getShaderInfo() {
             })
         }
     }
+    info.sort((a, b) => {
+        return b.info.showPriority - a.info.showPriority
+    })
     return info;
 }
