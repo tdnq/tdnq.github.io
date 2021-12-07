@@ -1,4 +1,4 @@
-import { clearColor } from "../../../config/shader.js";
+import { clearColorHex } from "../../../config/shader.js";
 import phong_png from "../../../assets/phong.png";
 import bump_png from "../../../assets/bump.png";
 import texture_png from "../../../assets/texture.png";
@@ -15,6 +15,8 @@ export default function shading(ele, data = { path: 'phong' }) {
             .getWebglContext('2d');
     }
     this.gl.clearRect(0, 0, this.canvasContainer.clientWidth, this.canvasContainer.clientHeight);
+    this.gl.fillStyle = clearColorHex;
+    this.gl.fillRect(0, 0, this.canvasContainer.clientWidth, this.canvasContainer.clientHeight);
     // insert picture
     drawPicture(this.gl, data.path, this.canvasContainer);
 
