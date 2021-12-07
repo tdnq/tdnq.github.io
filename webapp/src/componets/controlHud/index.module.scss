@@ -6,12 +6,17 @@
     bottom: 0;
 
     .hud {
-        margin-top: 5%;
-        margin-left: 10%;
         background-color: #eae2e24d;
         border-radius: 5px;
-        padding: 2%;
-        padding-bottom: 5%;
+        padding: 5%;
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hudWrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
     }
 }
