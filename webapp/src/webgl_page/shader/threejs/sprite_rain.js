@@ -30,6 +30,9 @@ export default async function (ele, data = {}) {
             if (sprite.position.y < -canvasContainer.clientHeight / 2) {
                 sprite.position.y = canvasContainer.clientHeight / 2;
             }
+            if (sprite.position.x > canvasContainer.clientWidth / 2) {
+                sprite.position.x = -canvasContainer.clientWidth / 2;
+            }
         });
         renderer.render(scene, camera);
         requestAnimationFrame(render);
