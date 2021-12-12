@@ -1,25 +1,35 @@
-:global{
-    .ant-layout-header{
+:global {
+    .ant-layout-header {
         box-shadow: 0 4px 5px #4354d0ba;
         padding-left: 0px;
     }
 
-    .ml-auto{
-        margin-left: auto!important;
+    .ml-auto {
+        margin-left: auto !important;
     }
-    .boxHidden{
+
+    .boxHidden {
         visibility: hidden;
     }
-    #root{
+
+    #root {
         height: 100%;
-        &{
-            section{
+
+        & {
+            section {
                 height: 100%;
             }
-            
+
         }
     }
+
     .ant-layout-content {
         min-height: auto;
+    }
+
+    .controlLabel {
+        &>strong {
+            line-height: 32px;
+        }
     }
 }
