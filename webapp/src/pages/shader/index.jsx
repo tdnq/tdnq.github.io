@@ -32,7 +32,7 @@ function Shader(props) {
         <ShaderStage>
             <Hud info={info} />
             {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName] && <ControlDataHud>
-                {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName](setData)}
+                {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName](setData, data)}
             </ControlDataHud>}
             <div className={style.canvasWraper} ref={shaderRef}></div>
         </ShaderStage>

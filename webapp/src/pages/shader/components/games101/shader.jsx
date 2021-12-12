@@ -6,7 +6,7 @@ const { Option } = Select;
 export function Shader(setData) {
     return <>
         <label><strong>shader type:</strong></label>
-        <Select defaultValue="phong" style={{ width: 120 }} style={{ marginLeft: "0.5rem" }} onChange={(value) => {
+        <Select defaultValue="phong" style={{ marginLeft: "0.5rem" }} onChange={(value) => {
             setData((data) => {
                 return { ...data, path: value }
             })
