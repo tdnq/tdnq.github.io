@@ -35,7 +35,9 @@ export default async function (ele, data = {}) {
             }
         });
         renderer.render(scene, camera);
-        requestAnimationFrame(render);
+        if (window.location.pathname === '/' || window.location.pathname.endsWith('threejs/sprite_rain')) {
+            requestAnimationFrame(render);
+        }
     }
 }
 async function model(canvasContainer, data) {
