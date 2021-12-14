@@ -1,11 +1,15 @@
 import taste from "./taste.js";
 import sprite_rain from "./sprite_rain.js";
+import math_curve from "./math_curve.js";
 export default class Index {
     taste() {
         taste.call(this, ...arguments);
     }
     sprite_rain() {
         sprite_rain.call(this, ...arguments);
+    }
+    math_curve() {
+        math_curve.call(this, ...arguments);
     }
     get_shader_info(name) {
         let info = {
@@ -22,6 +26,13 @@ export default class Index {
                 source: "郭隆邦 技术博客",
                 time: "2021/12/11",
                 showPriority: 51
+            },
+            math_curve: {
+                name: '数学曲线',
+                describe: '常见数学曲线',
+                source: 'internet',
+                time: '2021/12/12',
+                showPriority: 40
             }
         };
         switch (name) {
