@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from 'antd';
 import styles from "./index.module.scss";
 import Webgl_BasicLayout from "../webgl_page/basicLayout";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const { Header, Content, Footer } = Layout;
@@ -16,11 +16,11 @@ export default class BasicLayout extends React.Component {
     }
     render() {
         return (
-            <Layout className="layout">
+            <Layout style={{ minHeight: '100%' }} >
                 <Header>
                     <NavLink exact to="/">
                         <span ref={this.logoRef} className={styles.logo}></span>
-                    </NavLink> 
+                    </NavLink>
                 </Header>
                 <Content>
                     {this.props.children}
