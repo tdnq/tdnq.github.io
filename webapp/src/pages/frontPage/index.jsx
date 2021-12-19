@@ -15,12 +15,23 @@ export default function FrontPage() {
             item.fn(item.ref);
         });
     }, [refs])
+    React.useEffect(() => {
+        return () => {
+            refs.forEach((item) => {
+                if (item.bindInstanse?.animationId) {
+                    [...item.bindInstanse?.animationId.values()].forEach(id => {
+                        cancelAnimationFrame(id);
+                    })
+                }
+            })
+        }
+    }, []);
     return <Row justify="center" type="flex" style={{ paddingTop: "32px", height: "100%" }}>
         <Col className={styles.frontPage} xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
             {
                 ShadersInfo.map((item, index) => {
                     let ref = React.createRef();
-                    refs.push({ fn: item.draw, ref });
+                    refs.push({ fn: item.draw, ref, bindInstanse: item.bindInstanse });
                     return <Col
                         key={item.sourceClass + item.drawName}
                         xl={{ span: 6 }}
@@ -57,11 +68,13 @@ function getShaderInfo() {
             if (internalInfo[fnName]?.['showPriority'] === undefined) {
                 internalInfo[fnName]['showPriority'] = 0;
             }
+            let bindInstanse = new Shaders[key]();
             info.push({
                 drawName: fnName,
                 sourceClass: key,
                 info: internalInfo[fnName],
-                draw: instanse[fnName].bind(new Shaders[key]())
+                draw: instanse[fnName].bind(bindInstanse),
+                bindInstanse,
             })
         }
     }

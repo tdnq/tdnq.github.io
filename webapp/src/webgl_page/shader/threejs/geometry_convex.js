@@ -7,7 +7,7 @@ import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry';
 
 export default function (ele, data = {}) {
 
-    init(ele.current);
+    init.call(this, ele.current);
 }
 
 async function init(eleContainer) {
@@ -86,20 +86,20 @@ async function init(eleContainer) {
     group.add(mesh2);
 
     window.addEventListener('resize', onWindowResize);
-    animation();
 
     function onWindowResize() {
         camera.aspect = eleContainer.clientWidth / eleContainer.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(eleContainer.clientWidth, eleContainer.clientHeight);
     }
-    function animation() {
+    const animation = () => {
 
         let id = requestAnimationFrame(animation);
         this.animationId.set("geometry_convex", id);
         group.rotation.y += 0.005;
         render();
     }
+    animation();
     function render() {
         renderer.render(scene, camera);
     }

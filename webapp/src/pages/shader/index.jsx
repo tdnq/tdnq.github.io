@@ -15,12 +15,20 @@ function Shader(props) {
         let shaderName = props.match.params.shaderName;
         let shaderClass = props.match.params.shaderClass;
         let targeClass = import(`../../webgl_page/shader/${shaderClass}`);
+        let instanse = null;
         targeClass.then((res) => {
-            let instanse = new res.default();
+            instanse = new res.default();
             setFn([...fn, instanse[shaderName].bind(instanse)]);
             instanse[shaderName](shaderRef);
             setInfo(instanse[`get_shader_info`](shaderName));
         });
+        return () => {
+            if (instanse.animationId) {
+                [...instanse.animationId.values()].forEach(item => {
+                    cancelAnimationFrame(item);
+                })
+            }
+        }
     }, [props.match.params.shaderName, props.match.params.shaderClass]);
 
     useEffect(() => {
