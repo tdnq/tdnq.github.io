@@ -2,6 +2,7 @@ import taste from "./taste.js";
 import sprite_rain from "./sprite_rain.js";
 import math_curve from "./math_curve.js";
 import geometry_convex from "./geometry_convex.js";
+
 export default class Index {
     constructor() {
         this.animationId = new Map();
@@ -37,7 +38,7 @@ export default class Index {
             math_curve: {
                 name: '数学曲线',
                 describe: '常见数学曲线',
-                source: 'internet',
+                source: '',
                 time: '2021/12/12',
                 showPriority: 40
             },

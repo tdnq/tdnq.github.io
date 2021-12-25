@@ -39,10 +39,10 @@ function Shader(props) {
     return (
         <ShaderStage>
             <Hud info={info} />
+            <div className={style.canvasWraper} ref={shaderRef}></div>
             {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName] && <ControlDataHud>
                 {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName](setData, data)}
             </ControlDataHud>}
-            <div className={style.canvasWraper} ref={shaderRef}></div>
         </ShaderStage>
     )
 }
