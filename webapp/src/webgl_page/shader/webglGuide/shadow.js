@@ -1,4 +1,4 @@
-import { clearColor, blendClearColor } from "../../../config/shader.js";
+import { blendClearColor } from "../../../config/shader.js";
 import { shadowShaderSource, shadowNormalShaderSource } from "../../source_shader/webglGuide/index.js";
 import { Matrix4 } from "../../../utils/matrix_lib.js";
 
@@ -27,14 +27,14 @@ export default function shadow(ele) {
     tick.call(this, { vertexNum, count: 0, angle: 0, mvpMatrix });
     this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
 }
-function tick(data){
+function tick(data) {
     // this.gl.useProgram(data.shadowProgram);
     // draw triangle
     this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
-    
-    this.fillUniformData(new Matrix4(data.mvpMatrix).rotate(data.angle,0,1,0).elements, 'u_mvpMatrix', 4, 'Matrix');
+
+    this.fillUniformData(new Matrix4(data.mvpMatrix).rotate(data.angle, 0, 1, 0).elements, 'u_mvpMatrix', 4, 'Matrix');
     this.gl.drawArrays(this.gl.TRIANGLES, 0, 3);
-    
+
     this.fillUniformData(new Matrix4(data.mvpMatrix).elements, 'u_mvpMatrix', 4, 'Matrix');
     this.gl.drawArrays(this.gl.TRIANGLES, 3, data.vertexNum - 3);
 

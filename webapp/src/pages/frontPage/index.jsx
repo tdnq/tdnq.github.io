@@ -1,5 +1,5 @@
 import React from "react";
-import Webgl_frontPage from "../../webgl_page/frontPage";
+// import Webgl_frontPage from "../../webgl_page/frontPage";
 import { NavLink } from "react-router-dom";
 import { Row, Col, Card, Icon } from "antd";
 import * as Shaders from "../../webgl_page/shader/index.js";
@@ -9,13 +9,11 @@ const { Meta } = Card;
 
 export default function FrontPage() {
     const ShadersInfo = getShaderInfo();
-    const [refs, setRefs] = React.useState([]);
+    const [refs,] = React.useState([]);
     React.useEffect(() => {
         refs.forEach((item) => {
             item.fn(item.ref);
         });
-    }, [refs])
-    React.useEffect(() => {
         return () => {
             refs.forEach((item) => {
                 if (item.bindInstanse?.animationId) {
@@ -25,7 +23,7 @@ export default function FrontPage() {
                 }
             })
         }
-    }, []);
+    }, [refs]);
     return <Row justify="center" type="flex" style={{ paddingTop: "32px", height: "100%" }}>
         <Col className={styles.frontPage} xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
             {

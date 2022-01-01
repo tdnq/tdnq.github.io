@@ -9,7 +9,7 @@ import * as DataControl from "./components/index"; // change the data of shader
 function Shader(props) {
     let shaderRef = React.useRef();
     let [info, setInfo] = React.useState(null);
-    let [data, setData] = useState({});
+    let [data, setData] = useState([]);
     let [fn, setFn] = useState([]);
     useEffect(() => {
         let shaderName = props.match.params.shaderName;
@@ -18,7 +18,7 @@ function Shader(props) {
         let instanse = null;
         targeClass.then((res) => {
             instanse = new res.default();
-            setFn([...fn, instanse[shaderName].bind(instanse)]);
+            setFn((fn) => [...fn, instanse[shaderName].bind(instanse)]);
             instanse[shaderName](shaderRef);
             setInfo(instanse[`get_shader_info`](shaderName));
         });
@@ -35,7 +35,7 @@ function Shader(props) {
         fn.forEach((item) => {
             item(shaderRef, data);
         })
-    }, [data]);
+    }, [data, fn]);
     return (
         <ShaderStage>
             <Hud info={info} />
