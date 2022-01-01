@@ -1,12 +1,13 @@
 import { clearColor } from "../../../config/shader.js";
 import { bezierCurveShaderSource } from "../../source_shader/games101/index.js";
+import { removeChlidCavas } from '../../../utils/common';
 
 class Vector3 {
     constructor(...props) {
         [this.x, this.y, this.z] = props;
     }
 }
-export default function bezierCurve(ele, data = { frequence: 0.001 }) {
+export default function bezierCurve(ele, data) {
     this.canvasContainer = ele.current;
 
     this._points = [
@@ -15,17 +16,16 @@ export default function bezierCurve(ele, data = { frequence: 0.001 }) {
         new Vector3(0.4, -0.5, 0),
         new Vector3(0.4, 0.5, 0)
     ];
-    if (!this.gl) {
-        this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight)
-            .appendCanvas()
-            .getWebglContext();
-    }
+    removeChlidCavas(this.canvasContainer);
+    this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight)
+        .appendCanvas()
+        .getWebglContext();
     this.gl.clearColor(...clearColor);
     //init shader
     this.initShader(bezierCurveShaderSource);
     //model
     this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
-    model.call(this, this._points, data);
+    model.call(this, this._points, { ...{ frequence: 0.001 }, ...data, });
 
     // camera
 
@@ -37,7 +37,7 @@ export default function bezierCurve(ele, data = { frequence: 0.001 }) {
             y = -((e.clientY - elePosition.y) - (e.target.height / 2)) / (e.target.height / 2);
         this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
         this._points.push(new Vector3(x, y, 0));
-        model.call(this, this._points, data);
+        model.call(this, this._points, { ...{ frequence: 0.001 }, ...data, });
     });
 }
 function model(points, data = { frequence: 0.01 }) {

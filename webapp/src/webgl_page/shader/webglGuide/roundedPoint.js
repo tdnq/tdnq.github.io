@@ -1,7 +1,9 @@
 import { clearColor } from "../../../config/shader.js";
 import { roundedPointShaderSource } from "../../source_shader/webglGuide/index.js";
+import { removeChlidCavas } from '../../../utils/common';
 export default function roundedPoint(ele) {
     this.canvasContainer = ele.current;
+    removeChlidCavas(this.canvasContainer);
     this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight).appendCanvas().getWebglContext();
     this.gl.clearColor(...clearColor);
     this.gl.enable(this.gl.DEPTH_TEST);

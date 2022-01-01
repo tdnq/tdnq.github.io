@@ -2,10 +2,12 @@ import { clearColor } from "../../../config/shader.js";
 import cube from "../../material/cube.js";
 import { fogShaderSource, } from "../../source_shader/webglGuide/index.js";
 import { Matrix4 } from "../../../utils/matrix_lib.js";
+import { removeChlidCavas } from '../../../utils/common';
 
 export default function fog(ele) {
         //init environment
         this.canvasContainer = ele.current;
+        removeChlidCavas(this.canvasContainer);
         this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight).appendCanvas().getWebglContext();
         this.gl.clearColor(...clearColor);
         this.gl.enable(this.gl.DEPTH_TEST);
@@ -33,7 +35,7 @@ export default function fog(ele) {
         this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
         this.gl.drawElements(this.gl.TRIANGLES, cube.indices.length, this.gl.UNSIGNED_BYTE, 0);
         //bind event
-        document.addEventListener("keydown",keydown.bind(this,fogDist));
+        document.addEventListener("keydown", keydown.bind(this, fogDist));
 }
 function model() {
         let vertex = new Float32Array(cube.vertex);
@@ -44,20 +46,20 @@ function model() {
         this.fillShaderAttribution(color, "a_color", 4);
         this.fillElementsIndex(indices);
 }
-function keydown(fogDist,ev){
-        switch(ev.keyCode){
+function keydown(fogDist, ev) {
+        switch (ev.keyCode) {
                 case 38:
-                        fogDist[1]+=1;
+                        fogDist[1] += 1;
                         break;
                 case 40:
-                        if(fogDist[0]<fogDist[1]){
-                                fogDist[1]-=1;
+                        if (fogDist[0] < fogDist[1]) {
+                                fogDist[1] -= 1;
                         }
                         break;
                 default:
                         break;
         }
-        this.fillUniformData(fogDist,"u_fogDist",2);
+        this.fillUniformData(fogDist, "u_fogDist", 2);
         this.gl.clear(this.gl.DEPTH_BUFFER_BIT | this.gl.COLOR_BUFFER_BIT);
         this.gl.drawElements(this.gl.TRIANGLES, cube.indices.length, this.gl.UNSIGNED_BYTE, 0);
 }
