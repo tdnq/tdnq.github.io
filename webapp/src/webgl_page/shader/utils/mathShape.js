@@ -65,3 +65,9 @@ export function dcrHeart(lineMete, canvasContainer) {
     let line = new Three.Line(geometry, material);
     return [line]
 }
+export function sphere(lineMete, canvasContainer) {
+    let material = new Three.MeshBasicMaterial(lineMete.props.parms);
+    const geometry = new Three.SphereGeometry(lineMete.props.radius, lineMete.props.segemnt);
+    const sphere = new Three.Mesh(geometry, material);
+    return [sphere];
+}

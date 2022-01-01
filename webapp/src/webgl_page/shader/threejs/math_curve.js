@@ -21,7 +21,6 @@ export default function (ele, updateMeta = []) {
             {
                 type: 'dcrHeart',
                 props: { parms: { color: 0x00ffff }, interval: 0.01, scale: 20 },
-                // isHidden: true,
                 dimension: 2,
             },
             {
@@ -32,11 +31,23 @@ export default function (ele, updateMeta = []) {
                     a: 20,
                     b: 5
                 },
-                // isHidden: true,
                 dimension: 2,
-            }
+            },
             //三维曲线:
-
+            {
+                type: 'sphere',
+                props: {
+                    parms: {
+                        color: 0x515db9,
+                        opacity: 0.8,
+                        transparent: true
+                    },
+                    radius: 10,
+                    segemnt: 16,
+                    rings: 16,
+                },
+                dimension: 3
+            }
         ],
         dimension: 2,
     };
