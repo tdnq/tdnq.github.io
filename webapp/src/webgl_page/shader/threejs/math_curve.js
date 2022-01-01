@@ -47,7 +47,20 @@ export default function (ele, updateMeta = []) {
                     rings: 16,
                 },
                 dimension: 3
-            }
+            },
+            // {
+            //     type: 'heart3d',
+            //     props: {
+            //         parms: {
+            //             color: 0x515db9,
+            //             opacity: 0.8,
+            //             transparent: true
+            //         },
+            //         interval: 0.05,
+            //         scale: 1
+            //     },
+            //     dimension: 3
+            // }
         ],
         dimension: 2,
     };

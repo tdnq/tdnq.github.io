@@ -71,3 +71,24 @@ export function sphere(lineMete, canvasContainer) {
     const sphere = new Three.Mesh(geometry, material);
     return [sphere];
 }
+export function heart3d(lineMete, canvasContainer) {
+    let material = new Three.LineBasicMaterial(lineMete.props.parms);
+
+    let points = [];
+    let scale = 10;
+    for (let x = -scale; x < scale; x += lineMete.props.interval) {
+        for (let y = -scale; y < scale; y += lineMete.props.interval) {
+            for (let z = -scale; z < scale; z += lineMete.props.interval) {
+                let val = Math.pow(x * x + (9 / 4) * y * y + z * z - 1, 3) - x * x * Math.pow(z, 3) - (9 / 80) * y * y * Math.pow(z, 3);
+                if (Math.abs(val) < 0.01) {
+                    points.push(new Three.Vector3(x, y, z));
+                }
+            }
+        }
+    }
+
+    let geometry = new Three.BufferGeometry().setFromPoints(points);
+    geometry.scale(lineMete.props.scale, lineMete.props.scale, lineMete.props.scale);
+    let line = new Three.Mesh(geometry, material);
+    return [line]
+}
