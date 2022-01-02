@@ -1,6 +1,6 @@
 import { clearColor } from "../../../config/shader.js";
 import { bezierCurveShaderSource } from "../../source_shader/games101/index.js";
-import { removeChlidCavas } from '../../../utils/common';
+import { removeChlidCanvas } from '../../../utils/common';
 
 class Vector3 {
     constructor(...props) {
@@ -16,7 +16,7 @@ export default function bezierCurve(ele, data) {
         new Vector3(0.4, -0.5, 0),
         new Vector3(0.4, 0.5, 0)
     ];
-    removeChlidCavas(this.canvasContainer);
+    removeChlidCanvas(this.canvasContainer);
     this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight)
         .appendCanvas()
         .getWebglContext();

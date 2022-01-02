@@ -1,11 +1,11 @@
 import { blendClearColor } from "../../../config/shader.js";
 import { shadowShaderSource, shadowNormalShaderSource } from "../../source_shader/webglGuide/index.js";
-import { removeChlidCavas } from '../../../utils/common';
+import { removeChlidCanvas } from '../../../utils/common';
 import { Matrix4 } from "../../../utils/matrix_lib.js";
 
 export default function shadow(ele) {
     this.canvasContainer = ele.current;
-    removeChlidCavas(this.canvasContainer);
+    removeChlidCanvas(this.canvasContainer);
     this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight).appendCanvas().getWebglContext();
     this.gl.clearColor(...blendClearColor);
     this.gl.enable(this.gl.DEPTH_TEST);

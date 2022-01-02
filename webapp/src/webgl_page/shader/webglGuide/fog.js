@@ -2,12 +2,12 @@ import { clearColor } from "../../../config/shader.js";
 import cube from "../../material/cube.js";
 import { fogShaderSource, } from "../../source_shader/webglGuide/index.js";
 import { Matrix4 } from "../../../utils/matrix_lib.js";
-import { removeChlidCavas } from '../../../utils/common';
+import { removeChlidCanvas } from '../../../utils/common';
 
 export default function fog(ele) {
         //init environment
         this.canvasContainer = ele.current;
-        removeChlidCavas(this.canvasContainer);
+        removeChlidCanvas(this.canvasContainer);
         this.createCanvas(this.canvasContainer.clientWidth, this.canvasContainer.clientHeight).appendCanvas().getWebglContext();
         this.gl.clearColor(...clearColor);
         this.gl.enable(this.gl.DEPTH_TEST);

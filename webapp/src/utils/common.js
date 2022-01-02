@@ -1,3 +1,3 @@
-export function removeChlidCavas(canvasContainer) {
+export function removeChlidCanvas(canvasContainer) {
     canvasContainer.querySelectorAll('canvas').forEach((item) => item.remove());
 }

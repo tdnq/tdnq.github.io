@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { removeChlidCavas } from '../../../utils/common';
+import { removeChlidCanvas } from '../../../utils/common';
 import disc_png from "./assets/disc.png";
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -17,7 +17,7 @@ async function init(eleContainer) {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(eleContainer.clientWidth, eleContainer.clientHeight);
 
-    removeChlidCavas(eleContainer)
+    removeChlidCanvas(eleContainer)
     eleContainer.appendChild(renderer.domElement);
 
     //camera
