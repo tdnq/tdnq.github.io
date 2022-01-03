@@ -19,8 +19,6 @@ export default function (ele) {
   const SCREEN_HEIGHT = container.clientHeight;
   let aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
 
-  init();
-  animate();
 
   function init() {
     scene = new THREE.Scene();
@@ -156,9 +154,9 @@ export default function (ele) {
 
   //
 
-  function animate() {
-    requestAnimationFrame(animate);
-
+  const animate = () => {
+    const id = requestAnimationFrame(animate);
+    this.animationId.set('camera', id);
     render();
   }
 
@@ -205,4 +203,7 @@ export default function (ele) {
     renderer.setViewport(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
     renderer.render(scene, camera);
   }
+
+  init();
+  animate();
 }
