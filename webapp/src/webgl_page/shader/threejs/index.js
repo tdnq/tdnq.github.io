@@ -2,7 +2,7 @@ import taste from "./taste.js";
 import sprite_rain from "./sprite_rain.js";
 import math_curve from "./math_curve.js";
 import geometry_convex from "./geometry_convex.js";
-
+import camera from "./camera.js";
 export default class Index {
     constructor() {
         this.animationId = new Map();
@@ -18,6 +18,9 @@ export default class Index {
     }
     geometry_convex() {
         geometry_convex.call(this, ...arguments);
+    }
+    camera() {
+        camera.call(this, ...arguments);
     }
     get_shader_info(name) {
         let info = {
@@ -47,6 +50,13 @@ export default class Index {
                 describe: 'geometry',
                 source: 'three.js examples',
                 time: '2021/12/14',
+                showPriority: 35,
+            },
+            camera: {
+                name: 'camera',
+                describe: '',
+                source: 'three.js examples',
+                time: '2022/01/02',
                 showPriority: 35,
             }
         };
