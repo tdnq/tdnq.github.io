@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 
 function ShaderStage(props) {
   return (
-    <Row justify="center" type="flex" style={{ paddingTop: '32px', height: '100%' }}>
+    <Row justify="center" type="flex" style={{ paddingTop: '32px', paddingBottom:"32px", height: '100%' }}>
       <Col xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
         {props.children}
       </Col>

@@ -2,8 +2,9 @@ import React from 'react';
 // import Webgl_frontPage from "../../webgl_page/frontPage";
 import { NavLink } from 'react-router-dom';
 import {
-  Row, Col, Card, Icon,
+  Row, Col, Card,
 } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 import * as Shaders from '../../webgl_page/shader/index.js';
 import styles from './index.module.scss';
 
@@ -19,7 +20,8 @@ export default function FrontPage() {
     return () => {
       refs.forEach((item) => {
         if (item.bindInstanse?.animationId) {
-          Object.values(item.bindInstanse?.animationId).forEach((id) => {
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          [...item.bindInstanse?.animationId.values()].forEach((id) => {
             cancelAnimationFrame(id);
           });
         }
@@ -27,38 +29,41 @@ export default function FrontPage() {
     };
   }, [refs]);
   return (
-    <Row justify="center" type="flex" style={{ paddingTop: '32px', height: '100%' }}>
-      <Col className={styles.frontPage} xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
-        {
-                ShadersInfo.map((item) => {
-                  const ref = React.createRef();
-                  refs.push({ fn: item.draw, ref, bindInstanse: item.bindInstanse });
-                  return (
-                    <Col
-                      key={item.sourceClass + item.drawName}
-                      xl={{ span: 6 }}
-                      lg={{ span: 8 }}
-                      xs={{ span: 24 }}
-                    >
-                      <Card
-                        hoverable
-                        style={{ margin: '4px 8px' }}
-                        cover={<div ref={ref} style={{ height: '240px' }} />}
-                      >
-                        <Meta
-                          description={(
-                            <NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
-                              go
-                              <Icon type="arrow-right" />
-                            </NavLink>
-)}
-                          title={item.info.name}
-                        />
-                      </Card>
-                    </Col>
-                  );
-                })
-            }
+
+    <Row justify="center">
+      <Col xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
+        <Row justify="start" type="flex" className={styles.frontPage} style={{ paddingTop: '32px', height: '100%' }}>
+          {
+            ShadersInfo.map((item) => {
+              const ref = React.createRef();
+              refs.push({ fn: item.draw, ref, bindInstanse: item.bindInstanse });
+              return (
+                <Col
+                  key={item.sourceClass + item.drawName}
+                  xl={{ span: 6 }}
+                  lg={{ span: 8 }}
+                  xs={{ span: 24 }}
+                >
+                  <Card
+                    hoverable
+                    style={{ margin: '4px 8px' }}
+                    cover={<div ref={ref} style={{ height: '240px' }} />}
+                  >
+                    <Meta
+                      description={(
+                        <NavLink to={`/shader/${item.sourceClass}/${item.drawName}`}>
+                          go
+                          <ArrowRightOutlined />
+                        </NavLink>
+                      )}
+                      title={item.info.name}
+                    />
+                  </Card>
+                </Col>
+              );
+            })
+          }
+        </Row>
       </Col>
     </Row>
   );
