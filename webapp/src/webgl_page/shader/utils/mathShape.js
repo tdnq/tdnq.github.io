@@ -14,7 +14,7 @@ export function power(lineMete, canvasContainer) {
   const line = new Three.Line(geometry, material);
   return [line];
 }
-export function circle(lineMete, canvasContainer) {
+export function circle(lineMete, ) {
   const material = new Three.LineBasicMaterial(lineMete.props.parms);
   const points = [];
   for (let i = 0; i <= 360; i += lineMete.props.interval) {
@@ -51,7 +51,7 @@ export function hyperbola(lineMete, canvasContainer) {
   return [line, lineLeft];
 }
 
-export function dcrHeart(lineMete, canvasContainer) {
+export function dcrHeart(lineMete, ) {
   const material = new Three.LineBasicMaterial(lineMete.props.parms);
 
   const points = [];
@@ -65,13 +65,13 @@ export function dcrHeart(lineMete, canvasContainer) {
   const line = new Three.Line(geometry, material);
   return [line];
 }
-export function sphere(lineMete, canvasContainer) {
+export function sphere(lineMete, ) {
   const material = new Three.MeshBasicMaterial(lineMete.props.parms);
   const geometry = new Three.SphereGeometry(lineMete.props.radius, lineMete.props.segemnt);
   const sphere = new Three.Mesh(geometry, material);
   return [sphere];
 }
-export function heart3d(lineMete, canvasContainer) {
+export function heart3d(lineMete, ) {
   const material = new Three.LineBasicMaterial(lineMete.props.parms);
 
   const points = [];

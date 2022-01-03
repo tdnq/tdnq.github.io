@@ -6,7 +6,7 @@ import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry';
 import disc_png from './assets/disc.png';
 import { removeChlidCanvas } from '../../../utils/common';
 
-export default function (ele, data = {}) {
+export default function (ele, ) {
   init.call(this, ele.current);
 }
 

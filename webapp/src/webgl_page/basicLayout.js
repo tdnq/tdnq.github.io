@@ -1,5 +1,5 @@
 import Texture from '../utils/webglTexture.js';
-import { basicLayoutShaderSouce } from './source_shader/index.js';
+// import { basicLayoutShaderSouce } from './source_shader/index.js';
 
 export default class BasicLayout extends Texture {
   constructor(...props) {

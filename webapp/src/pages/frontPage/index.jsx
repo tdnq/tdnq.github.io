@@ -19,7 +19,7 @@ export default function FrontPage() {
     return () => {
       refs.forEach((item) => {
         if (item.bindInstanse?.animationId) {
-          [...item.bindInstanse?.animationId.values()].forEach((id) => {
+          Object.values(item.bindInstanse?.animationId).forEach((id) => {
             cancelAnimationFrame(id);
           });
         }
@@ -30,7 +30,7 @@ export default function FrontPage() {
     <Row justify="center" type="flex" style={{ paddingTop: '32px', height: '100%' }}>
       <Col className={styles.frontPage} xl={{ span: 16 }} lg={{ span: 18 }} xs={{ span: 24 }}>
         {
-                ShadersInfo.map((item, index) => {
+                ShadersInfo.map((item) => {
                   const ref = React.createRef();
                   refs.push({ fn: item.draw, ref, bindInstanse: item.bindInstanse });
                   return (

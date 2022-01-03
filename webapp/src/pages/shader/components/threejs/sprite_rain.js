@@ -4,7 +4,7 @@ import {
 } from 'antd';
 import lodash from 'lodash';
 
-export default function (setData, data) {
+export default function Comp (setData, data) {
   const [inputValue, setInputValue] = useState({
     count: 1000, baseScale: 10, speed: 0.5, ...data,
   });

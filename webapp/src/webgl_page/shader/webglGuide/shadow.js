@@ -10,6 +10,7 @@ export default function shadow(ele) {
   this.gl.clearColor(...blendClearColor);
   this.gl.enable(this.gl.DEPTH_TEST);
   // initShader
+  // eslint-disable-next-line no-unused-vars
   const shadowProgram = this.createShaderProgram(shadowShaderSource);
   const normalProgram = this.createShaderProgram(shadowNormalShaderSource);
   // modeling

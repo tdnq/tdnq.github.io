@@ -2,16 +2,17 @@ import * as THREE from 'three';
 import { removeChlidCanvas } from '../../../utils/common';
 
 export default function (ele) {
-  const container = ele.current; let
-    stats;
-  let camera; let scene; let renderer; let
-    mesh;
-  let cameraRig; let activeCamera; let
-    activeHelper;
-  let cameraPerspective; let
-    cameraOrtho;
-  let cameraPerspectiveHelper; let
-    cameraOrthoHelper;
+  const container = ele.current;
+  let camera;
+  let scene;
+  let renderer;
+  let mesh;
+  let cameraRig; let activeCamera;
+  let activeHelper;
+  let cameraPerspective;
+  let cameraOrtho;
+  let cameraPerspectiveHelper;
+  let cameraOrthoHelper;
   const frustumSize = 600;
 
   const SCREEN_WIDTH = container.clientWidth;

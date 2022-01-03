@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Switch>
         {
-          pagesConfig.map((item, index) => (
+          pagesConfig.map((item, ) => (
             <Route
               path={item.path}
               exact

@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Slider, Checkbox, InputNumber, Row, Col, Select,
+   Checkbox, Row, Col, Select,
 } from 'antd';
 
 const { Option } = Select;
 
-export default function (setData) {
+export default function Comp (setData) {
   // const [data, setNewData] = React.useState([]);
   const [dimension, setDimension] = React.useState(2);
   const lineOptions_2d = [
@@ -25,7 +25,7 @@ export default function (setData) {
           defaultValue={dimension}
           style={{ marginLeft: '0.5rem' }}
           onChange={(value) => {
-            setData((data) => [{ position: 'dimension', value }]);
+            setData(() => [{ position: 'dimension', value }]);
             setDimension(value);
           }}
         >
@@ -47,7 +47,7 @@ export default function (setData) {
                         setData((data) => {
                           data = Array.isArray(data) ? data : [];
                           const newUpdateData = [];
-                          lineOptions_2d.forEach((item, index) => {
+                          lineOptions_2d.forEach((item, ) => {
                             newUpdateData.push({
                               position: `lineType.${item.index}.isHidden`, value: true,
                             });
@@ -80,7 +80,7 @@ export default function (setData) {
                         setData((data) => {
                           data = Array.isArray(data) ? data : [];
                           const newUpdateData = [];
-                          lineOptions_3d.forEach((item, index) => {
+                          lineOptions_3d.forEach((item, ) => {
                             newUpdateData.push({
                               position: `lineType.${item.index}.isHidden`, value: true,
                             });
