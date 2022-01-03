@@ -1,6 +1,5 @@
-
- export const basicLayoutShaderSource = {
-    vshader: `
+export const basicLayoutShaderSource = {
+  vshader: `
             attribute vec4 a_position;
             attribute vec4 a_color;
             varying vec4 f_color;
@@ -9,17 +8,17 @@
                 f_color = a_color;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             varying vec4 f_color;
             void main(){
                 gl_FragColor = f_color;
             }
-        `
-}
+        `,
+};
 
-export const rotateCubeUseMouseShaderSource={
-        vshader: `
+export const rotateCubeUseMouseShaderSource = {
+  vshader: `
             attribute vec4 a_position;
             attribute vec4 a_color;
             varying vec4 f_color;
@@ -30,11 +29,11 @@ export const rotateCubeUseMouseShaderSource={
                 gl_PointSize = 10.0;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             varying vec4 f_color;
             void main(){
                 gl_FragColor = f_color;
             }
-        `
-}
+        `,
+};

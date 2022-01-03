@@ -1,2 +1,2 @@
-export * from "./games101/index";
-export * from "./threejs/index";
+export * from './games101/index';
+export * from './threejs/index';

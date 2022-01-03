@@ -1,5 +1,5 @@
 export const bezierCurveShaderSource = {
-    vshader: `
+  vshader: `
             attribute vec4 a_position;
             attribute vec4 a_color;
             varying vec4 f_color;
@@ -9,11 +9,11 @@ export const bezierCurveShaderSource = {
                 gl_PointSize = 3.0;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             varying vec4 f_color;
             void main(){
                 gl_FragColor = f_color;
             }
-        `
-}
+        `,
+};

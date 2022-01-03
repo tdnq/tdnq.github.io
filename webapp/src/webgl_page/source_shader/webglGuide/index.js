@@ -1,5 +1,5 @@
 export const fogShaderSource = {
-    vshader: `
+  vshader: `
             attribute vec4 a_position;
             attribute vec4 a_color;
             varying vec4 f_color;
@@ -13,7 +13,7 @@ export const fogShaderSource = {
                 v_dist = gl_Position.w;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             varying vec4 f_color;
             varying float v_dist;
@@ -24,10 +24,10 @@ export const fogShaderSource = {
                 vec4 color = mix(u_fogColor, f_color, fogFactor);
                 gl_FragColor = color;
             }
-        `
-}
+        `,
+};
 export const roundedPointShaderSource = {
-    vshader: `
+  vshader: `
             attribute vec4 a_position;
             attribute vec4 a_color;
             varying vec4 f_color;
@@ -37,7 +37,7 @@ export const roundedPointShaderSource = {
                 gl_PointSize = 100.0;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             varying vec4 f_color;
             void main(){
@@ -47,25 +47,25 @@ export const roundedPointShaderSource = {
                         gl_FragColor = vec4(f_color); 
                      } else { discard; }
                 }
-        `
-}
+        `,
+};
 export const shadowShaderSource = {
-    vshader: `
+  vshader: `
             attribute vec4 a_position;
             uniform mat4 u_mvpMatrix;
             void main(){
                 gl_Position = u_mvpMatrix * a_position;
             }
         `,
-    fshader: `
+  fshader: `
             precision mediump float;
             void main(){
                 gl_FragColor = vec4(gl_FragCoord.z, 0, 0, 0);
             }
-        `
-}
+        `,
+};
 export const shadowNormalShaderSource = {
-    vshader:`
+  vshader: `
         attribute vec4 a_position;
         attribute vec4 a_color;
         uniform mat4 u_mvpMatrix;
@@ -78,7 +78,7 @@ export const shadowNormalShaderSource = {
             v_color = a_color;
         }
     `,
-    fshader:`
+  fshader: `
         precision mediump float;
         uniform sampler2D u_shadowMap;
         varying vec4 v_positionFromLight;
@@ -90,5 +90,5 @@ export const shadowNormalShaderSource = {
             float visibility = (shadowCoord.z > depth + 0.005) ? 0.7: 1.0;
             gl_FragColor = vec4(v_color.rgb * visibility, v_color.a);
         }
-    `
-}
+    `,
+};
