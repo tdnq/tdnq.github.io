@@ -24,6 +24,7 @@ export default class Index extends Base {
         name: '贝塞尔曲线',
         describe: 'draw a bezier curve',
         source: 'course games 101',
+        isHidden: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         time: '2021/12/07',
         showPriority: 50,
       },
