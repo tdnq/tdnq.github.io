@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-   Checkbox, Row, Col, Select,
+  Checkbox, Row, Col, Select,
 } from 'antd';
 
 const { Option } = Select;
 
-export default function Comp (setData) {
+export default function Comp(setData) {
   // const [data, setNewData] = React.useState([]);
   const [dimension, setDimension] = React.useState(2);
   const lineOptions_2d = [
@@ -34,71 +34,71 @@ export default function Comp (setData) {
         </Select>
       </Col>
       {
-                dimension === 2 && (
-                <>
-                  <Col>
-                    <label className="controlLabel"><strong>曲线类型:</strong></label>
-                  </Col>
-                  <Col>
-                    <Checkbox.Group
-                      options={lineOptions_2d}
-                      defaultValue={['dcrHeart', 'hyperbola']}
-                      onChange={(value) => {
-                        setData((data) => {
-                          data = Array.isArray(data) ? data : [];
-                          const newUpdateData = [];
-                          lineOptions_2d.forEach((item, ) => {
-                            newUpdateData.push({
-                              position: `lineType.${item.index}.isHidden`, value: true,
-                            });
-                          });
-                          value.forEach((item) => {
-                            newUpdateData.push({
-                              position: `lineType.${lineOptions_2d.find((option) => option.value === item).index}.isHidden`,
-                              value: false,
-                            });
-                          });
-                          return [...data, ...newUpdateData];
-                        });
-                      }}
-                    />
-                  </Col>
-                </>
-                )
-            }
+        dimension === 2 && (
+          <>
+            <Col span={24}>
+              <label className="controlLabel"><strong>曲线类型:</strong></label>
+            </Col>
+            <Col>
+              <Checkbox.Group
+                options={lineOptions_2d}
+                defaultValue={['dcrHeart', 'hyperbola']}
+                onChange={(value) => {
+                  setData((data) => {
+                    data = Array.isArray(data) ? data : [];
+                    const newUpdateData = [];
+                    lineOptions_2d.forEach((item,) => {
+                      newUpdateData.push({
+                        position: `lineType.${item.index}.isHidden`, value: true,
+                      });
+                    });
+                    value.forEach((item) => {
+                      newUpdateData.push({
+                        position: `lineType.${lineOptions_2d.find((option) => option.value === item).index}.isHidden`,
+                        value: false,
+                      });
+                    });
+                    return [...data, ...newUpdateData];
+                  });
+                }}
+              />
+            </Col>
+          </>
+        )
+      }
       {
-                dimension === 3 && (
-                <>
-                  <Col>
-                    <label className="controlLabel"><strong>曲线类型:</strong></label>
-                  </Col>
-                  <Col>
-                    <Checkbox.Group
-                      options={lineOptions_3d}
-                      defaultValue={['sphere']}
-                      onChange={(value) => {
-                        setData((data) => {
-                          data = Array.isArray(data) ? data : [];
-                          const newUpdateData = [];
-                          lineOptions_3d.forEach((item, ) => {
-                            newUpdateData.push({
-                              position: `lineType.${item.index}.isHidden`, value: true,
-                            });
-                          });
-                          value.forEach((item) => {
-                            newUpdateData.push({
-                              position: `lineType.${lineOptions_3d.find((option) => option.value === item).index}.isHidden`,
-                              value: false,
-                            });
-                          });
-                          return [...data, ...newUpdateData];
-                        });
-                      }}
-                    />
-                  </Col>
-                </>
-                )
-            }
+        dimension === 3 && (
+          <>
+            <Col span={24}>
+              <label className="controlLabel"><strong>曲线类型:</strong></label>
+            </Col>
+            <Col>
+              <Checkbox.Group
+                options={lineOptions_3d}
+                defaultValue={['sphere']}
+                onChange={(value) => {
+                  setData((data) => {
+                    data = Array.isArray(data) ? data : [];
+                    const newUpdateData = [];
+                    lineOptions_3d.forEach((item,) => {
+                      newUpdateData.push({
+                        position: `lineType.${item.index}.isHidden`, value: true,
+                      });
+                    });
+                    value.forEach((item) => {
+                      newUpdateData.push({
+                        position: `lineType.${lineOptions_3d.find((option) => option.value === item).index}.isHidden`,
+                        value: false,
+                      });
+                    });
+                    return [...data, ...newUpdateData];
+                  });
+                }}
+              />
+            </Col>
+          </>
+        )
+      }
     </Row>
   );
 }
