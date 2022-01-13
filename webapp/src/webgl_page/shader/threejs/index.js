@@ -3,30 +3,18 @@ import sprite_rain from './sprite_rain.js';
 import math_curve from './math_curve.js';
 import geometry_convex from './geometry_convex.js';
 import camera from './camera.js';
+import cameraArray from './cameraArray.js';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
-  }
 
-  taste() {
-    taste.call(this, ...arguments);
-  }
-
-  sprite_rain() {
-    sprite_rain.call(this, ...arguments);
-  }
-
-  math_curve() {
-    math_curve.call(this, ...arguments);
-  }
-
-  geometry_convex() {
-    geometry_convex.call(this, ...arguments);
-  }
-
-  camera() {
-    camera.call(this, ...arguments);
+    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray };
+    for (let item of Object.keys(scenes)) {
+      this[item] = function () {
+        scenes[item].call(this, ...arguments);
+      }
+    }
   }
 
   get_shader_info(name) {
@@ -64,6 +52,13 @@ export default class Index {
         describe: '',
         source: 'three.js examples',
         time: '2022/01/02',
+        showPriority: 35,
+      },
+      cameraArray: {
+        name: 'camera array',
+        describe: '多部相机',
+        source: 'three.js examples',
+        time: '2022/01/09',
         showPriority: 35,
       },
     };
