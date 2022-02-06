@@ -19,8 +19,8 @@ export default class BasicLayout extends React.Component {
     return (
       <Layout style={{ minHeight: '100%' }}>
         <Header>
-          <NavLink exact to="/">
-            <span ref={this.logoRef} className={styles.logo} />
+          <NavLink exact to="/" className={styles.logo}>
+            <span ref={this.logoRef} />
           </NavLink>
         </Header>
         <Content>
