@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 import flowerVert from "../glsl/flower.vert.glsl";
 import flowerFrag from "../glsl/flower.frag.glsl";
+import translateVert from "../glsl/translate.vert.glsl";
+import translateFrag from "../glsl/translate.frag.glsl";
+
+
 
 export default class Index {
     constructor(ele) {
@@ -40,6 +44,28 @@ export default class Index {
             fragmentShader: await this.fileLoader.loadAsync(flowerFrag),
         });
         const shape = new THREE.Mesh(geometry, material);
+        return shape;
+    }
+    async translate() {
+        const geometry = new THREE.PlaneBufferGeometry(2, 2);
+        const material = new THREE.ShaderMaterial({
+            uniforms: {
+                u_resolution: {
+                    value: {
+                        x: this.ele.clientWidth,
+                        y: this.ele.clientHeight
+                    }
+                },
+                u_time: {
+                    value: 0,
+                }
+            },
+            vertexShader: await this.fileLoader.loadAsync(translateVert),
+            fragmentShader: await this.fileLoader.loadAsync(translateFrag),
+        });
+        this.transformMaterial = material;
+        const shape = new THREE.Mesh(geometry, material);
+
         return shape;
     }
 }

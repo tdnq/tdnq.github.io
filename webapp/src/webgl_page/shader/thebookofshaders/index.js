@@ -20,7 +20,6 @@ export default class Index {
                 describe: 'glsl transformation ',
                 source: 'thebookofshaders',
                 time: '2022/01/13',
-                isHidden: true,
             },
             shapes: {
                 name: '造型函数',
