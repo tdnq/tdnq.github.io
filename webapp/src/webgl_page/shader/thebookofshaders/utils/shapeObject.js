@@ -1,10 +1,4 @@
 import * as THREE from 'three';
-import flowerVert from "../glsl/flower.vert.glsl";
-import flowerFrag from "../glsl/flower.frag.glsl";
-import translateVert from "../glsl/translate.vert.glsl";
-import translateFrag from "../glsl/translate.frag.glsl";
-
-
 
 export default class Index {
     constructor(ele) {
@@ -12,7 +6,8 @@ export default class Index {
         this.fileLoader = new THREE.FileLoader();
     }
     generate(type, parms = {}) {
-        const shape = this?.[type](parms);
+        const fn = this[type] || this.commonShader.bind(this, type);
+        const shape = fn(parms);
         if (!shape) {
             console.error(`no ${type} shape in shader/shapes`);
             return null;
@@ -28,25 +23,7 @@ export default class Index {
         scene.add(shape);
         return true;
     }
-    // eslint-disable-next-line no-unused-vars
-    async flower(parms = {}) {
-        const geometry = new THREE.PlaneBufferGeometry(2, 2);
-        const material = new THREE.RawShaderMaterial({
-            uniforms: {
-                u_resolution: {
-                    value: {
-                        x: this.ele.clientWidth,
-                        y: this.ele.clientHeight
-                    }
-                }
-            },
-            vertexShader: await this.fileLoader.loadAsync(flowerVert),
-            fragmentShader: await this.fileLoader.loadAsync(flowerFrag),
-        });
-        const shape = new THREE.Mesh(geometry, material);
-        return shape;
-    }
-    async translate() {
+    async commonShader(type) {
         const geometry = new THREE.PlaneBufferGeometry(2, 2);
         const material = new THREE.ShaderMaterial({
             uniforms: {
@@ -60,12 +37,11 @@ export default class Index {
                     value: 0,
                 }
             },
-            vertexShader: await this.fileLoader.loadAsync(translateVert),
-            fragmentShader: await this.fileLoader.loadAsync(translateFrag),
+            vertexShader: await this.fileLoader.loadAsync((await import(`../glsl/${type}.vert.glsl`)).default),
+            fragmentShader: await this.fileLoader.loadAsync((await import(`../glsl/${type}.frag.glsl`)).default),
         });
         this.transformMaterial = material;
         const shape = new THREE.Mesh(geometry, material);
-
         return shape;
     }
 }
