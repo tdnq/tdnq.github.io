@@ -1,12 +1,13 @@
 import transform from "./transform/index.js";
 import shapes from "./shapes/index.js";
 import random from "./generativeDesigns/random.js";
+import laveLamp from "./noise/lavaLamp.js";
 
 export default class Index {
     constructor() {
         this.animationId = new Map();
 
-        let scenes = { shapes, transform, random };
+        let scenes = { shapes, transform, random, laveLamp };
         for (let item of Object.keys(scenes)) {
             this[item] = function () {
                 scenes[item].call(this, ...arguments);
@@ -33,6 +34,12 @@ export default class Index {
                 describe: "随机生成展示效果",
                 source: 'thebookofshaders',
                 time: '2022/02/08',
+            },
+            laveLamp: {
+                name: "噪声：岩浆",
+                describe: "噪声效果",
+                source: 'thebookofshaders',
+                time: '2022/02/10',
             }
         };
         switch (name) {
