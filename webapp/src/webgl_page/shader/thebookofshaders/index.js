@@ -2,12 +2,13 @@ import transform from "./transform/index.js";
 import shapes from "./shapes/index.js";
 import random from "./generativeDesigns/random.js";
 import laveLamp from "./noise/lavaLamp.js";
+import voronoiAlgorithm from "./cellularNoise/voronoiAlgorithm.js";
 
 export default class Index {
     constructor() {
         this.animationId = new Map();
 
-        let scenes = { shapes, transform, random, laveLamp };
+        let scenes = { shapes, transform, random, laveLamp, voronoiAlgorithm };
         for (let item of Object.keys(scenes)) {
             this[item] = function () {
                 scenes[item].call(this, ...arguments);
@@ -40,6 +41,12 @@ export default class Index {
                 describe: "噪声效果",
                 source: 'thebookofshaders',
                 time: '2022/02/10',
+            },
+            voronoiAlgorithm: {
+                name: "4 cells voronoi",
+                describe: "",
+                source: 'thebookofshaders',
+                time: '2022/02/13',
             }
         };
         switch (name) {

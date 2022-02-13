@@ -35,6 +35,12 @@ export default class Index {
                 },
                 u_time: {
                     value: 0,
+                },
+                u_mouse: {
+                    value: {
+                        x: 0,
+                        y: 0
+                    }
                 }
             },
             vertexShader: await this.fileLoader.loadAsync((await import(`../glsl/${type}.vert.glsl`)).default),
