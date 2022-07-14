@@ -5,6 +5,7 @@ import Hud from '../../componets/hud/index.jsx';
 import ControlDataHud from '../../componets/controlHud/index.jsx';
 import style from './index.module.scss';
 import * as DataControl from './components/index'; // change the data of shader
+import { useUpdateEffect } from 'ahooks';
 
 function Shader(props) {
   const shaderRef = React.useRef();
@@ -19,7 +20,6 @@ function Shader(props) {
     targeClass.then((res) => {
       instanse = new res.default();
       setFn((fn) => [...fn, instanse[shaderName].bind(instanse)]);
-      instanse[shaderName](shaderRef);
       setInfo(instanse.get_shader_info(shaderName));
     });
     return () => {
@@ -31,7 +31,7 @@ function Shader(props) {
     };
   }, [props.match.params.shaderName, props.match.params.shaderClass]);
 
-  useEffect(() => {
+  useUpdateEffect(() => {
     fn.forEach((item) => {
       item(shaderRef, data);
     });
@@ -41,9 +41,9 @@ function Shader(props) {
       <Hud info={info} />
       <div className={style.canvasWraper} ref={shaderRef} />
       {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName] && (
-      <ControlDataHud>
-        {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName](setData, data)}
-      </ControlDataHud>
+        <ControlDataHud>
+          {DataControl[props.match.params.shaderClass]?.[props.match.params.shaderName](setData, data)}
+        </ControlDataHud>
       )}
     </ShaderStage>
   );

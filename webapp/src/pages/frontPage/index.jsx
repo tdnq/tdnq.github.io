@@ -11,7 +11,9 @@ import styles from './index.module.scss';
 const { Meta } = Card;
 
 export default function FrontPage() {
-  const ShadersInfo = getShaderInfo();
+  const ShadersInfo = React.useMemo(() => {
+    return getShaderInfo();
+  }, []);
   const [refs] = React.useState([]);
   React.useEffect(() => {
     refs.forEach((item) => {

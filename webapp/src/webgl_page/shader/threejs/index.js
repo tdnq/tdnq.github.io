@@ -4,15 +4,28 @@ import math_curve from './math_curve.js';
 import geometry_convex from './geometry_convex.js';
 import camera from './camera.js';
 import cameraArray from './cameraArray.js';
+import Space from './space.js';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
 
-    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray };
+    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space };
     for (let item of Object.keys(scenes)) {
-      this[item] = function () {
-        scenes[item].call(this, ...arguments);
+      if (scenes[item].toString().startsWith('class')) {
+        let instance = new scenes[item](this.animationId);
+        this[item] = function () {
+          // 拆分为init 和 update两个阶段
+          if (arguments[1]?.length) {
+            instance.update(...arguments.slice(1));
+          } else {
+            instance.init(...arguments);
+          }
+        }
+      } else {
+        this[item] = function () {
+          scenes[item].call(this, ...arguments);
+        }
       }
     }
   }
@@ -61,6 +74,13 @@ export default class Index {
         time: '2022/01/09',
         showPriority: 35,
       },
+      Space: {
+        name: '太空',
+        describe: '太阳系',
+        source: 'three.js examples',
+        time: '2022/01/09',
+        showPriority: 35,
+      }
     };
     switch (name) {
       case '*':
