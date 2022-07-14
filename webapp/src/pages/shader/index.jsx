@@ -28,6 +28,7 @@ function Shader(props) {
           cancelAnimationFrame(item);
         });
       }
+      instanse.leaveCallback?.forEach(fn => fn());
     };
   }, [props.match.params.shaderName, props.match.params.shaderClass]);
 

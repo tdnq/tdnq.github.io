@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { removeChlidCanvas } from "../../../utils/common";
 import AxesGridHelper from 'utils/Helper/AxesGridHelper';
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module'
 export default class Index {
@@ -13,7 +12,6 @@ export default class Index {
     }
     init(canvasContainer) {
         this.canvasContainer = canvasContainer?.current;
-        removeChlidCanvas(this.canvasContainer);
         this.initThree();
         this.initCamera();
         this.initLight();
@@ -23,6 +21,9 @@ export default class Index {
         if (window.location.pathname !== '/') {
             this.initHelper();
         }
+    }
+    leaveCallback = () => {
+        this.gui.destroy();
     }
     render = () => {
         this.renderer.render(this.scene, this.camera);

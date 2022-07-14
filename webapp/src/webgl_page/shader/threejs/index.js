@@ -9,12 +9,16 @@ import Space from './space.js';
 export default class Index {
   constructor() {
     this.animationId = new Map();
+    this.leaveCallback = [];
 
     let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space };
     for (let item of Object.keys(scenes)) {
       if (scenes[item].toString().startsWith('class')) {
-        let instance = new scenes[item](this.animationId);
+        let instance = new scenes[item](this.animationId, this.leaveCallback);
         this[item] = function () {
+          if (instance.leaveCallback) {
+            this.leaveCallback = [instance.leaveCallback];
+          }
           // 拆分为init 和 update两个阶段
           if (arguments[1]?.length) {
             instance.update(...arguments.slice(1));
