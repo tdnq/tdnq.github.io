@@ -5,13 +5,14 @@ import geometry_convex from './geometry_convex.js';
 import camera from './camera.js';
 import cameraArray from './cameraArray.js';
 import Space from './space.js';
+import Tank from './tank';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
     this.leaveCallback = [];
 
-    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space };
+    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank };
     for (let item of Object.keys(scenes)) {
       if (scenes[item].toString().startsWith('class')) {
         let instance = new scenes[item](this.animationId, this.leaveCallback);
@@ -84,6 +85,13 @@ export default class Index {
         source: 'three.js examples',
         time: '2022/01/09',
         showPriority: 35,
+      },
+      Tank: {
+        name: 'tank',
+        describe: '坦克',
+        source: 'three.js examples',
+        time: '2022/07/17',
+        showPriority: 65,
       }
     };
     switch (name) {
