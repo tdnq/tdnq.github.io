@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { removeChlidCanvas } from 'utils/common';

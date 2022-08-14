@@ -1,7 +1,7 @@
-import lodash from 'lodash';
+import clone from 'lodash/clone';
 
 export function getUpdateData(data, updateMeta = []) {
-  const newData = lodash.clone(data);
+  const newData = clone(data);
 
   updateMeta.forEach((item) => {
     const position = item.position.split('.');

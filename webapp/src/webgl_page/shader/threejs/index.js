@@ -8,13 +8,14 @@ import Space from './space.js';
 import Tank from './tank';
 import Shadow from './shadow';
 import WorldPopulation from './worldPopulation';
+import MiniCity from './miniCity';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
     this.leaveCallback = [];
 
-    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank, Shadow, WorldPopulation };
+    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank, Shadow, WorldPopulation, MiniCity };
     for (let item of Object.keys(scenes)) {
       if (scenes[item].toString().startsWith('class')) {
         let instance = new scenes[item](this.animationId, this.leaveCallback);
@@ -105,6 +106,13 @@ export default class Index {
       WorldPopulation: {
         name: 'WorldPopulation',
         describe: '世界人口分布',
+        source: 'three.js examples',
+        time: '2022/07/29',
+        showPriority: 55,
+      },
+      MiniCity: {
+        name: 'miniCity',
+        describe: '小型城市模型',
         source: 'three.js examples',
         time: '2022/07/29',
         showPriority: 55,
