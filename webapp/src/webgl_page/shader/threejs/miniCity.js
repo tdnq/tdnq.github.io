@@ -18,11 +18,11 @@ export default class Index {
         this.data = {
             isHideHelper: window.location.pathname === '/'
         };
-        this.gui = this.data.isHideHelper ? null : new GUI();
     }
     async init(canvasContainer) {
         this.canvasContainer = canvasContainer?.current;
         removeChlidCanvas(this.canvasContainer);
+        this.gui = this.data.isHideHelper ? null : new GUI();
         this.initThree();
         this.initCamera();
         this.initControl();
