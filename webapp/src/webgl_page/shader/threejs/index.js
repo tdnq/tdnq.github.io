@@ -10,13 +10,14 @@ import Shadow from './shadow';
 import WorldPopulation from './worldPopulation';
 import MiniCity from './miniCity';
 import SkyBox from './skyBox';
+import Picker from './picker';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
     this.leaveCallback = [];
 
-    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank, Shadow, WorldPopulation, MiniCity, SkyBox };
+    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank, Shadow, WorldPopulation, MiniCity, SkyBox, Picker };
     for (let item of Object.keys(scenes)) {
       if (scenes[item].toString().startsWith('class')) {
         let instance = new scenes[item](this.animationId, this.leaveCallback);
@@ -123,6 +124,13 @@ export default class Index {
         describe: '天空盒',
         source: 'three.js examples',
         time: '2022/08/19',
+        showPriority: 55,
+      },
+      Picker: {
+        name: 'Picker',
+        describe: '物体拾取',
+        source: 'three.js examples',
+        time: '2022/08/21',
         showPriority: 55,
       }
     };
