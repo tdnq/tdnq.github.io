@@ -11,13 +11,29 @@ import WorldPopulation from './worldPopulation';
 import MiniCity from './miniCity';
 import SkyBox from './skyBox';
 import Picker from './picker';
+import AlignHtmlElementsTo3d from './alignHtmlElementsTo3d';
 
 export default class Index {
   constructor() {
     this.animationId = new Map();
     this.leaveCallback = [];
 
-    let scenes = { taste, sprite_rain, math_curve, geometry_convex, camera, cameraArray, Space, Tank, Shadow, WorldPopulation, MiniCity, SkyBox, Picker };
+    let scenes = {
+      taste,
+      sprite_rain,
+      math_curve,
+      geometry_convex,
+      camera,
+      cameraArray,
+      Space,
+      Tank,
+      Shadow,
+      WorldPopulation,
+      MiniCity,
+      SkyBox,
+      Picker,
+      AlignHtmlElementsTo3d
+    };
     for (let item of Object.keys(scenes)) {
       if (scenes[item].toString().startsWith('class')) {
         let instance = new scenes[item](this.animationId, this.leaveCallback);
