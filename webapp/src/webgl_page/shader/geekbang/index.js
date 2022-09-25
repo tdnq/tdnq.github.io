@@ -1,9 +1,10 @@
 import repeatAndRandom from './repeatAndRandom';
+import Pixels from './pixels';
 export default class Index {
     constructor() {
         this.info = {};
         this.leaveCallback = [];
-        let scenes = { repeatAndRandom };
+        let scenes = { repeatAndRandom, Pixels };
         for (let item of Object.keys(scenes)) {
             if (scenes[item].toString().startsWith('class')) {
                 let instance = new scenes[item]();
