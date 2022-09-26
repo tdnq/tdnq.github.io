@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktdnq_github_io=self.webpackChunktdnq_github_io||[]).push([[7617],{7617:function(t,e,i){t.exports=i.p+"static/media/frame.3fcdb1bf3665d142a73e.png"}}]);
