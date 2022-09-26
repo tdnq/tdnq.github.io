@@ -39,7 +39,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.3"
   },
   "browserslist": {
     "production": [
