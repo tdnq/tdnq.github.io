@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktdnq_github_io=globalThis.webpackChunktdnq_github_io||[]).push([[3038],{3038:(t,n,e)=>{e.r(n),e.d(n,{getUpdateData:()=>a});var i=e(4161),o=e.n(i);function a(t,n=[]){const e=o()(t);return n.forEach((t=>{const n=t.position.split(".");let i=e;for(let e=0;e<n.length-1;e++)i=i[n[e]];i[n[n.length-1]]=t.value})),e}}}]);

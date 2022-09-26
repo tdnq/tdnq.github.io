@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktdnq_github_io=globalThis.webpackChunktdnq_github_io||[]).push([[511],{511:(_,a,i)=>{_.exports=i.p+"static/media/gpw_v4_basic_demographic_characteristics_rev10_a000_014mt_2010_cntm_1_deg.808a098392068f0273b2.asc"}}]);
